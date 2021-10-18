@@ -1,0 +1,44 @@
+.bookmark-button {
+    background-color: rgba(47, 47, 47, .05);
+    display: inline-block;
+    height: 56px;
+    border-radius: 100px;
+    width: min-content;
+    display: flex;
+    align-items: center;
+    width: 174px;
+    border: 0;
+    outline: 0;
+    
+    &:hover {
+        cursor: pointer;
+        
+        #bookmark-circle {
+            fill: #707070;
+        }
+    }
+    
+    
+    span {
+        font-weight: 700;
+        padding-left: 16px;
+        color: #7A7A7A;
+    }
+}
+
+.bookmark-button.bookmarked {
+    #bookmark-circle {
+        fill: #147A73;
+    }
+
+    #bookmark-icon {
+        fill: #ffffff;
+    }
+
+    span {
+        color: #147A73;
+        &::after {
+            content:'ed'
+        }
+    }
+}
