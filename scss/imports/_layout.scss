@@ -121,13 +121,50 @@ body.hamburger-open {
 .card {
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0,.05);
+    background-color: #fff;
+    
+    //padding
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 40px;
     padding-bottom: 40px;
 
+
+    //margin
     margin-left:25px;
     margin-right:25px;
     // margin-top:25px;
-    // margin-bottom:25px;
+    margin-bottom:25px;
+}
+
+
+//  ******** Numbers section ********
+.numbers.card {
+    .numbers-container {
+        display: flex;
+        flex-direction: column;
+        .number-element {
+            position: relative;
+            .current-amount {
+                font-weight: 700;
+                font-size: 32px;
+            }
+            // .follow-text {
+
+            // }
+
+            &:nth-child(1), &:nth-child(2){
+                &::after {
+                    content:'';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: 1px;
+                    width: 80px;
+                    background-color: rgba(0, 0, 0,0.15);
+                }
+            }
+        }
+    }
 }
