@@ -6,6 +6,14 @@
   text-align: center;
 }
 
+.text-gray {
+  color: #7A7A7A;
+  line-height: 24px;
+  letter-spacing: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -71,11 +79,14 @@ body.hamburger-open .first-fold .fixed-hamburger .menu {
   width: 100%;
   z-index: 2;
 }
-body.hamburger-open .first-fold .fixed-hamburger .menu li {
-  padding: 24px;
-}
 body.hamburger-open .first-fold .fixed-hamburger .menu li:not(:first-child) {
   border-top: 1px solid #2f2f2f;
+}
+body.hamburger-open .first-fold .fixed-hamburger .menu li a {
+  padding: 24px;
+  text-decoration: none;
+  color: #000;
+  display: block;
 }
 
 .overlay {
@@ -89,17 +100,33 @@ body.hamburger-open .first-fold .fixed-hamburger .menu li:not(:first-child) {
   z-index: 1;
 }
 
-.about {
-  padding: 0 25px;
-  margin: 0 25px;
+.about.card {
   position: relative;
   margin-top: -30px;
-  border: 1px solid red;
+  background-color: #fff;
+  padding-top: 0;
 }
-.about .buttons-container {
+.about.card .logo2-container {
+  height: 30px;
+}
+.about.card .logo2-container #logo2 {
+  transform: translateY(-30px);
+}
+.about.card .buttons-container {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+}
+
+.card {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 button {
@@ -110,6 +137,7 @@ button {
   font-family: "Commissioner", sans-serif;
   font-weight: 700;
   font-size: 1rem;
+  line-height: 1rem;
 }
 button:hover {
   cursor: pointer;
@@ -145,7 +173,6 @@ button.btn {
   background-color: #147A73;
   color: #fff;
   padding: 17px 42px;
-  font-size: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

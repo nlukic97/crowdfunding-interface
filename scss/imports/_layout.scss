@@ -66,9 +66,15 @@ body.hamburger-open {
                 
                 
                 li {
-                    padding: 24px;
                     &:not(:first-child){
                         border-top: 1px solid rgb(47, 47, 47);
+                    }
+                    
+                    a {
+                        padding: 24px;
+                        text-decoration: none;
+                        color: #000;
+                        display: block;
                     }
                 }
             }
@@ -89,17 +95,39 @@ body.hamburger-open {
 }
 
 //  ****** About section ******
-.about {
-    padding: 0 25px;
-    margin: 0 25px;
+.about.card {
     position: relative;
     margin-top: -30px;
-    // background-color: #fff;
-    border: 1px solid red;
+    background-color: #fff;
+    padding-top: 0;
+
+    .logo2-container {
+        height: 30px; // to remove the space that is created when the translate is applied to the #logo2 element
+
+        #logo2 {
+            transform: translateY(-30px);
+        }
+    }
 
     .buttons-container {
         display: flex;
         justify-content: space-between;
         flex-direction: row;
     }
+}
+
+
+
+.card {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0,.05);
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    margin-left:25px;
+    margin-right:25px;
+    // margin-top:25px;
+    // margin-bottom:25px;
 }

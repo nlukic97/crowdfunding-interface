@@ -6,6 +6,7 @@ button {
     font-family: 'Commissioner', sans-serif;
     font-weight: 700;
     font-size: 1rem;
+    line-height: 1rem;
     
     &:hover {
         cursor: pointer;
@@ -59,6 +60,5 @@ button {
         background-color: #147A73;
         color: #fff;
         padding: 17px 42px;
-        font-size: 1rem;
     }
 }
