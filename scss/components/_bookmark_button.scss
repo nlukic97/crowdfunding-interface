@@ -1,44 +1,15 @@
-.bookmark-button {
-    background-color: rgba(47, 47, 47, .05);
+button { 
     display: inline-block;
-    height: 56px;
-    border-radius: 100px;
-    width: min-content;
-    display: flex;
-    align-items: center;
-    width: 174px;
-    border: 0;
-    outline: 0;
+    border-radius: 5px;
+    line-height: 28px;
+    letter-spacing: 0.25px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 2px solid transparent; //so that the buttons don't change height upon hover - box-sizing:border-box does not work
+    padding: 10px 32px;
+    outline: none;
     
     &:hover {
         cursor: pointer;
-        
-        #bookmark-circle {
-            fill: #707070;
-        }
-    }
-    
-    
-    span {
-        font-weight: 700;
-        padding-left: 16px;
-        color: #7A7A7A;
-    }
-}
-
-.bookmark-button.bookmarked {
-    #bookmark-circle {
-        fill: #147A73;
-    }
-
-    #bookmark-icon {
-        fill: #ffffff;
-    }
-
-    span {
-        color: #147A73;
-        &::after {
-            content:'ed'
-        }
     }
 }

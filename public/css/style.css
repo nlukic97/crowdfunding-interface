@@ -3,40 +3,43 @@
   padding: 0;
 }
 
-.bookmark-button {
+button {
+  display: inline-block;
+  outline: none;
+  border: none;
+  border-radius: 100px;
+}
+button:hover {
+  cursor: pointer;
+}
+
+button.bookmark-button {
   background-color: rgba(47, 47, 47, 0.05);
   display: inline-block;
   height: 56px;
-  border-radius: 100px;
   width: min-content;
   display: flex;
   align-items: center;
   width: 174px;
-  border: 0;
-  outline: 0;
 }
-.bookmark-button:hover {
-  cursor: pointer;
-}
-.bookmark-button:hover #bookmark-circle {
+button.bookmark-button:hover #bookmark-circle {
   fill: #707070;
 }
-.bookmark-button span {
+button.bookmark-button span {
   font-weight: 700;
   padding-left: 16px;
   color: #7A7A7A;
 }
-
-.bookmark-button.bookmarked #bookmark-circle {
+button.bookmark-button.bookmarked #bookmark-circle {
   fill: #147A73;
 }
-.bookmark-button.bookmarked #bookmark-icon {
+button.bookmark-button.bookmarked #bookmark-icon {
   fill: #ffffff;
 }
-.bookmark-button.bookmarked span {
+button.bookmark-button.bookmarked span {
   color: #147A73;
 }
-.bookmark-button.bookmarked span::after {
+button.bookmark-button.bookmarked span::after {
   content: "ed";
 }
 
