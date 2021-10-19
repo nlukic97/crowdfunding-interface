@@ -104,8 +104,8 @@ body.hamburger-open .first-fold .fixed-hamburger .menu li a {
 .about.card {
   position: relative;
   margin-top: -30px;
+  padding-bottom: 40px;
   background-color: #fff;
-  padding-top: 0;
 }
 .about.card .logo2-container {
   height: 30px;
@@ -125,8 +125,6 @@ body.hamburger-open .first-fold .fixed-hamburger .menu li a {
   background-color: #fff;
   padding-left: 25px;
   padding-right: 25px;
-  padding-top: 40px;
-  padding-bottom: 40px;
   margin-left: 25px;
   margin-right: 25px;
   margin-bottom: 25px;
@@ -138,10 +136,15 @@ body.hamburger-open .first-fold .fixed-hamburger .menu li a {
 }
 .numbers.card .numbers-container .number-element {
   position: relative;
+  padding: 24px 0;
 }
 .numbers.card .numbers-container .number-element .current-amount {
   font-weight: 700;
   font-size: 32px;
+  line-height: 100%;
+}
+.numbers.card .numbers-container .number-element .follow-text {
+  line-height: 100%;
 }
 .numbers.card .numbers-container .number-element:nth-child(1)::after, .numbers.card .numbers-container .number-element:nth-child(2)::after {
   content: "";
@@ -152,6 +155,20 @@ body.hamburger-open .first-fold .fixed-hamburger .menu li a {
   height: 1px;
   width: 80px;
   background-color: rgba(0, 0, 0, 0.15);
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 12px;
+  border-radius: 33.5px;
+  background-color: rgba(47, 47, 47, 0.05);
+}
+.progress-bar-container .progress-bar {
+  border-radius: inherit;
+  transition: width 1s ease-out;
+  width: 0%;
+  height: inherit;
+  background-color: #3CB3AB;
 }
 
 button {
