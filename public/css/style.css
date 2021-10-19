@@ -101,19 +101,19 @@ body.hamburger-open .first-fold .fixed-hamburger .menu li a {
   z-index: 1;
 }
 
-.about.card {
+.info.card {
   position: relative;
   margin-top: -30px;
-  padding-bottom: 40px;
+  padding-top: 0;
   background-color: #fff;
 }
-.about.card .logo2-container {
+.info.card .logo2-container {
   height: 30px;
 }
-.about.card .logo2-container #logo2 {
+.info.card .logo2-container #logo2 {
   transform: translateY(-30px);
 }
-.about.card .buttons-container {
+.info.card .buttons-container {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -125,6 +125,8 @@ body.hamburger-open .first-fold .fixed-hamburger .menu li a {
   background-color: #fff;
   padding-left: 25px;
   padding-right: 25px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   margin-left: 25px;
   margin-right: 25px;
   margin-bottom: 25px;

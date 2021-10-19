@@ -50,15 +50,12 @@ body.hamburger-open {
             z-index: 2;
 
             .logo-hamburger-container {
-
-                
                 #hamburger-icon {
                     content:url('../../public/images/icon-close-menu.svg');
 
                 }
             }
             .menu {
-                // position: absolute;
                 display: block;
                 box-sizing: border-box;
                 width: 100%;
@@ -94,11 +91,11 @@ body.hamburger-open {
     z-index: 1;
 }
 
-//  ****** About section ******
-.about.card {
+//  ****** Info section ******
+.info.card {
     position: relative;
     margin-top: -30px;
-    padding-bottom: 40px;
+    padding-top: 0;
     background-color: #fff;
 
     .logo2-container {
@@ -126,8 +123,8 @@ body.hamburger-open {
     //padding
     padding-left: 25px;
     padding-right: 25px;
-    // padding-top: 40px; //not sure about these
-    // padding-bottom: 40px; //not sure about these
+    padding-top: 40px; //not sure about these
+    padding-bottom: 40px; //not sure about these
 
 
     //margin
@@ -192,6 +189,8 @@ body.hamburger-open {
     }
 }
 
+
+//  progress bar element
 .progress-bar-container {
     width: 100%;
     height: 12px;
@@ -205,4 +204,9 @@ body.hamburger-open {
         height: inherit;
         background-color: #3CB3AB;
     }
+}
+
+// ******** About section ********
+.about.card {
+
 }
