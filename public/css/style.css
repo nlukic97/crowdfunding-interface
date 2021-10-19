@@ -2,6 +2,10 @@
   font-size: 1.13rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -85,6 +89,19 @@ body.hamburger-open .first-fold .fixed-hamburger .menu li:not(:first-child) {
   z-index: 1;
 }
 
+.about {
+  padding: 0 25px;
+  margin: 0 25px;
+  position: relative;
+  margin-top: -30px;
+  border: 1px solid red;
+}
+.about .buttons-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
 button {
   display: inline-block;
   outline: none;
@@ -105,12 +122,12 @@ button.bookmark-button {
   width: min-content;
   display: flex;
   align-items: center;
-  width: 174px;
 }
 button.bookmark-button:hover #bookmark-circle {
   fill: #707070;
 }
 button.bookmark-button span {
+  display: none;
   font-weight: 700;
   padding-left: 16px;
   color: #7A7A7A;
@@ -124,8 +141,11 @@ button.bookmark-button.bookmarked #bookmark-icon {
 button.bookmark-button.bookmarked span {
   color: #147A73;
 }
-button.bookmark-button.bookmarked span::after {
-  content: "ed";
+button.btn {
+  background-color: #147A73;
+  color: #fff;
+  padding: 17px 42px;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
