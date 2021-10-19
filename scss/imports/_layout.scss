@@ -142,6 +142,7 @@ body.hamburger-open {
 .numbers.card {
     // padding-top: 0;
     // padding-bottom: 0;
+    padding-bottom: 40px;
 
     .numbers-container {
         display: flex;
@@ -150,15 +151,29 @@ body.hamburger-open {
         .number-element {
             position: relative;
             padding: 24px 0;
+
             .current-amount {
                 font-weight: 700;
                 font-size: 32px;
-                line-height: 100%;
+
+                &#gathered::before {
+                    content:"\0024";
+                }
             }
             .follow-text {
                 line-height: 100%;
+                padding-top: 15px;
                 // padding-top: 8px;
                 // padding-bottom: 24px;
+                &#goal {
+                    &::before {
+                        content:'of \0024'
+                    }
+
+                    &:after {
+                        content:' backed'
+                    };
+                }
             }
 
             &:nth-child(1), &:nth-child(2){
@@ -185,8 +200,8 @@ body.hamburger-open {
 
     .progress-bar {
         border-radius: inherit;
-        transition: width 1s ease-out;
-        width: 0%;
+        transition: width 1.3s ease-out 0.6s;
+        width:0%;
         height: inherit;
         background-color: #3CB3AB;
     }

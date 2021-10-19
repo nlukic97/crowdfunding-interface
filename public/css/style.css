@@ -130,6 +130,9 @@ body.hamburger-open .first-fold .fixed-hamburger .menu li a {
   margin-bottom: 25px;
 }
 
+.numbers.card {
+  padding-bottom: 40px;
+}
 .numbers.card .numbers-container {
   display: flex;
   flex-direction: column;
@@ -141,10 +144,19 @@ body.hamburger-open .first-fold .fixed-hamburger .menu li a {
 .numbers.card .numbers-container .number-element .current-amount {
   font-weight: 700;
   font-size: 32px;
-  line-height: 100%;
+}
+.numbers.card .numbers-container .number-element .current-amount#gathered::before {
+  content: "$";
 }
 .numbers.card .numbers-container .number-element .follow-text {
   line-height: 100%;
+  padding-top: 15px;
+}
+.numbers.card .numbers-container .number-element .follow-text#goal::before {
+  content: "of $";
+}
+.numbers.card .numbers-container .number-element .follow-text#goal:after {
+  content: " backed";
 }
 .numbers.card .numbers-container .number-element:nth-child(1)::after, .numbers.card .numbers-container .number-element:nth-child(2)::after {
   content: "";
@@ -165,7 +177,7 @@ body.hamburger-open .first-fold .fixed-hamburger .menu li a {
 }
 .progress-bar-container .progress-bar {
   border-radius: inherit;
-  transition: width 1s ease-out;
+  transition: width 1.3s ease-out 0.6s;
   width: 0%;
   height: inherit;
   background-color: #3CB3AB;
