@@ -53,13 +53,17 @@ button {
     }
 
     &.btn {
-        background-color: #147A73;
+        background-color:#3CB3AB;
         color: #fff;
         padding: 17px 42px;
 
+        &:hover {
+            background-color: #147A73;
+        }
+        
         &.out-of-stock {
             background-color: #979797;
-
+            
             &:hover {
                 cursor: default;
             }

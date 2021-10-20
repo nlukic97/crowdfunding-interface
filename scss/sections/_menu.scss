@@ -35,7 +35,7 @@
 
 // overlay being displayed
 body {
-    &.hamburger-open, &.back-project-open {
+    &.hamburger-open {
         overflow: hidden;
     
         .overlay {

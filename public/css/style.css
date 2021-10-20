@@ -119,10 +119,10 @@ body {
   border-radius: 8px;
 }
 
-body.hamburger-open, body.back-project-open {
+body.hamburger-open {
   overflow: hidden;
 }
-body.hamburger-open .overlay, body.back-project-open .overlay {
+body.hamburger-open .overlay {
   display: block;
   z-index: 1;
 }
@@ -284,9 +284,12 @@ button.bookmark-button.bookmarked span {
   color: #147A73;
 }
 button.btn {
-  background-color: #147A73;
+  background-color: #3CB3AB;
   color: #fff;
   padding: 17px 42px;
+}
+button.btn:hover {
+  background-color: #147A73;
 }
 button.btn.out-of-stock {
   background-color: #979797;
@@ -295,9 +298,42 @@ button.btn.out-of-stock:hover {
   cursor: default;
 }
 
+body.back-project-open {
+  overflow: hidden;
+}
+body.back-project-open .overlay {
+  display: block;
+}
+body.back-project-open .pledge-modal {
+  display: block;
+  position: fixed;
+  top: 5vh;
+  z-index: 3;
+  height: 80vh;
+  overflow: scroll;
+}
+
+.pledge-modal {
+  display: none;
+}
 .pledge-modal .pledge-option {
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
+}
+.pledge-modal .pledge-option:hover {
+  cursor: pointer;
+}
+.pledge-modal .pledge-option.selected {
+  border: 2px solid #3CB3AB;
+}
+.pledge-modal .pledge-option.selected:hover {
+  cursor: default;
+}
+.pledge-modal .pledge-option.selected .payment-container {
+  max-height: 0px;
+}
+.pledge-modal .pledge-option.out-of-stock {
+  opacity: 0.5;
 }
 .pledge-modal .pledge-option .radio-container {
   display: flex;
@@ -321,11 +357,75 @@ button.btn.out-of-stock:hover {
   font-size: 14px;
   padding-top: 5px;
 }
-.pledge-modal .pledge-option.selected {
-  border: 2px solid #3CB3AB;
+.pledge-modal .pledge-option .payment-container {
+  overflow: hidden;
+  max-height: 0px;
+  transition: all 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
-.pledge-modal .pledge-option.out-of-stock {
-  opacity: 0.5;
+.pledge-modal .pledge-option .payment-container::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.pledge-modal .pledge-option .payment-container label {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin: 24px 0;
+}
+.pledge-modal .pledge-option .payment-container .input-button-container {
+  display: inline-block;
+  box-sizing: border-box;
+}
+.pledge-modal .pledge-option .payment-container .input-button-container .input-container {
+  display: inline-block;
+  position: relative;
+  font-weight: 700;
+}
+.pledge-modal .pledge-option .payment-container .input-button-container .input-container::before {
+  content: "$";
+  font-size: 14px;
+  padding: 14px 0 14px 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+  z-index: 1;
+}
+.pledge-modal .pledge-option .payment-container .input-button-container .input-container input {
+  margin: 0 5px;
+  padding: 14px 20px 14px 35px;
+  border-radius: 100px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  position: relative;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  width: 100px;
+  box-sizing: border-box;
+}
+.pledge-modal .pledge-option .payment-container .input-button-container .input-container input::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background: orange;
+}
+.pledge-modal .pledge-option .payment-container .input-button-container button {
+  margin: 0 5px;
+  padding: 17px 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
