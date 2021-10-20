@@ -1,0 +1,64 @@
+// ******** About section ********
+.rewards.card {
+    .reward.card {
+        border: 1px solid rgba(0,0,0,0.15);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .short-description {
+            color: #3CB3AB;
+            font-weight: 500;
+            margin: 10px 0;
+            display: block;
+        }
+
+        .remaining-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            .amount {
+                font-weight: 700;
+                font-size: 32px;
+                line-height: 100%;
+                letter-spacing: 0;
+                color: #000;
+            }
+
+            .label {
+                color: #7A7A7A;
+                font-size: 15px;
+                letter-spacing: 0;
+                line-height: 100%;
+                padding-left: 10px;
+            }
+
+        }
+        button.btn {
+            margin-top: 20px;
+
+            &.available {
+                display: block;
+            }
+            &.out-of-stock {
+                display: none;
+            }
+            
+        }
+
+        &.out-of-stock {
+            opacity: 0.5;
+
+            button.btn {
+                &.available {
+                    display: none;
+                }
+                &.out-of-stock {
+                    display: block;
+                }
+            }
+        }
+    }
+}

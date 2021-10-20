@@ -48,10 +48,6 @@ button {
             
             span {
                 color: #147A73;
-                
-                &::after {
-                    // content:'ed'
-                }
             }
         }
     }
@@ -60,5 +56,13 @@ button {
         background-color: #147A73;
         color: #fff;
         padding: 17px 42px;
+
+        &.out-of-stock {
+            background-color: #979797;
+
+            &:hover {
+                cursor: default;
+            }
+        }
     }
 }

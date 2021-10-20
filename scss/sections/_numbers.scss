@@ -1,0 +1,51 @@
+//  ******** Numbers section ********
+.numbers.card {
+    padding-bottom: 40px;
+
+    .numbers-container {
+        display: flex;
+        flex-direction: column;
+
+        .number-element {
+            position: relative;
+            padding: 24px 0;
+
+            .current-amount {
+                font-weight: 700;
+                font-size: 32px;
+
+                &#gathered::before {
+                    content:"\0024";
+                }
+            }
+            .follow-text {
+                line-height: 100%;
+                padding-top: 15px;
+                // padding-top: 8px;
+                // padding-bottom: 24px;
+                &#goal {
+                    &::before {
+                        content:'of \0024'
+                    }
+
+                    &:after {
+                        content:' backed'
+                    };
+                }
+            }
+
+            &:nth-child(1), &:nth-child(2){
+                &::after {
+                    content:'';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: 1px;
+                    width: 80px;
+                    background-color: rgba(0, 0, 0,0.15);
+                }
+            }
+        }
+    }
+}
