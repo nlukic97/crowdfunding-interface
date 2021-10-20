@@ -1,0 +1,43 @@
+.pledge-modal {
+
+    .pledge-option {
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        box-sizing: border-box;
+
+        .radio-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            .label-condition-container {
+                padding-left: 10px;
+
+                label {
+                    font-weight: 700;
+                    font-size: 14px;
+                    letter-spacing: 0;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+    
+                .pledge-condition {
+                    color: #3CB3AB;
+                    font-weight: 500;
+                    font-size: 14px;
+                    padding-top: 5px;
+                }
+            }
+
+        }
+
+        &.selected {
+            border: 2px solid #3CB3AB;
+        }
+
+        &.out-of-stock {
+            opacity: 0.5;
+        }
+    }
+}

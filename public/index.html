@@ -100,13 +100,13 @@
     <!-- Reward component 1 -->
     <div class="card reward">
       <h3>Bamboo stand</h3>
-      <span class="short-description">Pledge &#36;25 or more</span>
+      <span class="pledge-condition">Pledge &#36;25 or more</span>
 
       <p class="text-gray">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p>
 
       <div class="remaining-container">
         <span class="amount">101</span>
-        <span class="label">left</span>
+        <span class="amount-info">left</span>
       </div>
 
       <button class="btn available">Select reward</button>
@@ -117,13 +117,13 @@
     <!-- Reward component 2 -->
     <div class="card reward">
       <h3>Black Edition Stand</h3>
-      <span class="short-description">Pledge &#36;75 or more</span>
+      <span class="pledge-condition">Pledge &#36;75 or more</span>
 
       <p class="text-gray">You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
 
       <div class="remaining-container">
         <span class="amount">64</span>
-        <span class="label">left</span>
+        <span class="amount-info">left</span>
       </div>
 
       <button class="btn available">Select reward</button>
@@ -134,13 +134,13 @@
     <!-- Reward component 3 - has the 'out-of-stock' class which will show the second button... - -->
     <div class="card reward out-of-stock">
       <h3>Mahogany Special Edition</h3>
-      <span class="short-description">Pledge &#36;200 or more</span>
+      <span class="pledge-condition">Pledge &#36;200 or more</span>
 
       <p class="text-gray">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
 
       <div class="remaining-container">
         <span class="amount">0</span>
-        <span class="label">left</span>
+        <span class="amount-info">left</span>
       </div>
 
       <button class="btn available">Select reward</button>
@@ -148,55 +148,72 @@
     </div>
   </section>
 
+
+
+
   <!-- ******** pledge modal ******** -->
-  <div class="card container">
+  <div class="card pledge-modal container">
     <h2>Back this project</h2>
     <p class="text-gray">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world? </p>
 
     <!-- pledging component 1  -->
-    <div class="card">
-      <div>
+    <div class="card pledge-option">
+
+      <div class="radio-container">
         <input type="radio" name="reward" id="no-reward">
-        <label for="no-reward">Pledge with no reward</label>
+
+        <div class="label-condition-container">
+          <label for="no-reward">Pledge with no reward</label>
+        </div>
+
       </div>
 
       <p class="text-gray">Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
     </div>
 
     <!-- pledging component 2  -->
-    <div class="card">
-      <div>
+    <div class="card pledge-option">
+
+      <div class="radio-container">
         <input type="radio" name="reward" id="bamboo">
-        <div>
+
+        <div class="label-condition-container">
           <label for="bamboo">Bamboo Stand</label>
-          <span>Pledge $25 or more</span>
+          <div class="pledge-condition"><span>Pledge $25 or more</span></div>
         </div>
+
       </div>
 
       <p class="text-gray">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p>
     </div>
 
     <!-- pledging component 3  -->
-    <div class="card">
-      <div>
+    <div class="card pledge-option">
+
+      <div class="radio-container">
         <input type="radio" name="reward" id="black-edition">
-        <div>
+
+        <div class="label-condition-container">
           <label for="black-edition">Black Edition Stand</label>
-          <span>Pledge $75 or more</span>
+          <div class="pledge-condition"><span>Pledge $75 or more</span></div>
         </div>
+
       </div>
 
       <p class="text-gray">You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
     </div>
 
     <!-- pledging component 4  -->
-    <div class="card">
-      <div>
-        <input type="radio" name="reward" id="black-edition">
-        <div>
-          <label for="black-edition">Mahogany Special Edition</label>
-          <span>Pledge $200 or more</span>
+    <div class="card pledge-option out-of-stock">
+
+      <div class="radio-container">
+        <input type="radio" name="reward" id="Mahogany">
+
+        <div class="label-condition-container">
+          <label for="Mahogany">Mahogany Special Edition</label>
+          <div class="pledge-condition"><span>Pledge $200 or more</span></div>
         </div>
+
       </div>
 
       <p class="text-gray">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. 

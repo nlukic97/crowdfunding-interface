@@ -199,7 +199,7 @@ body.hamburger-open .first-fold .fixed-hamburger .menu li a {
 .rewards.card .reward.card:last-child {
   margin-bottom: 0;
 }
-.rewards.card .reward.card .short-description {
+.rewards.card .reward.card .pledge-condition {
   color: #3CB3AB;
   font-weight: 500;
   margin: 10px 0;
@@ -217,7 +217,7 @@ body.hamburger-open .first-fold .fixed-hamburger .menu li a {
   letter-spacing: 0;
   color: #000;
 }
-.rewards.card .reward.card .remaining-container .label {
+.rewards.card .reward.card .remaining-container .amount-info {
   color: #7A7A7A;
   font-size: 15px;
   letter-spacing: 0;
@@ -293,6 +293,39 @@ button.btn.out-of-stock {
 }
 button.btn.out-of-stock:hover {
   cursor: default;
+}
+
+.pledge-modal .pledge-option {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+.pledge-modal .pledge-option .radio-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.pledge-modal .pledge-option .radio-container .label-condition-container {
+  padding-left: 10px;
+}
+.pledge-modal .pledge-option .radio-container .label-condition-container label {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0;
+}
+.pledge-modal .pledge-option .radio-container .label-condition-container label:hover {
+  cursor: pointer;
+}
+.pledge-modal .pledge-option .radio-container .label-condition-container .pledge-condition {
+  color: #3CB3AB;
+  font-weight: 500;
+  font-size: 14px;
+  padding-top: 5px;
+}
+.pledge-modal .pledge-option.selected {
+  border: 2px solid #3CB3AB;
+}
+.pledge-modal .pledge-option.out-of-stock {
+  opacity: 0.5;
 }
 
 /*# sourceMappingURL=style.css.map */
