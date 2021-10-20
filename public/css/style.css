@@ -119,18 +119,19 @@ body {
   border-radius: 8px;
 }
 
-body.hamburger-open {
+body.hamburger-open, body.back-project-open {
   overflow: hidden;
 }
-body.hamburger-open .overlay {
+body.hamburger-open .overlay, body.back-project-open .overlay {
   display: block;
   z-index: 1;
 }
+
 body.hamburger-open .first-fold {
   position: relative;
 }
 body.hamburger-open .first-fold .fixed-hamburger {
-  position: fixed;
+  position: absolute;
   width: calc(100% - 50px);
   z-index: 2;
 }

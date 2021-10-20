@@ -32,21 +32,27 @@
     
 }
 
+
+// overlay being displayed
+body {
+    &.hamburger-open, &.back-project-open {
+        overflow: hidden;
+    
+        .overlay {
+            display: block;
+            z-index: 1;
+        }
+    }
+}
+
 // hamburger menu open settings
 body.hamburger-open {
-    overflow: hidden;
-
-    .overlay {
-        display: block;
-        z-index: 1;
-    }
-
     // Displaying the hamburger menu
     .first-fold {
         position: relative;
 
         .fixed-hamburger {
-            position: fixed;
+            position: absolute;
             width: calc(100% - 50px);
             z-index: 2;
 
