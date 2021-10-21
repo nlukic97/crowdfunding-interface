@@ -5,6 +5,11 @@
     }
     
     body {
+        
+        .card {
+            padding: 45px;
+        }
+        
         // if user opened hamburger menu, then increased screen size, hide the overlay and hamburger menu (and its icons)
         .first-fold {
             .fixed-hamburger {
@@ -136,12 +141,13 @@
                 }
             }
         }
-
+        
         &.back-project-open {
             .pledge-modal {
                 .pledge-option {
                     position: relative;
-
+                    padding: 28px;
+                    
                     .radio-container {
                         .label-condition-container {
                             .label {
@@ -153,39 +159,46 @@
                                 padding-top: 0;
                                 padding-left: 5px;
                                 display: inline;
+                                p.text-gray {
+                                    margin: 25px 0 29px 0;
+                                }
                             }
                         }
                     }
-
+                    
                     .remaining-container {
                         position: absolute;
                         top: 0;
                         right: 24px; //cthis might change, confirm
                         display: inline-block;
                     }
-
+                    
                     .payment-container {
                         flex-direction: row;
                         justify-content: space-between;
                         // padding: 0;
-
+                        padding: 0;
+                        
                         label {
                             width: unset;
-                            // padding: 19px 0 24px 0;
-                            // padding: 0;
+                            padding: 0;
                         }
-
+                        
                         .input-button-container {
                             display: block;
-                            // padding: 0;
+                            padding: 0;
+                            
+                            input {
+                                padding: 17px 20px 17px 45px;
+                            }
                         }
-
+                        
                         &::after {
                             top: 1px;
                         }
                     }
-
-
+                    
+                    
                     &.selected {
                         .radio-container {
                             .label-condition-container {
@@ -197,13 +210,28 @@
                                 }
                             }
                         }
+                        
+                        .payment-container {
+                            flex-direction: row;
+                            justify-content: space-between;
+                            padding: 40px 0 20px 0;
+                            
+                            label {
+                                padding: 0;
+                            }
+                            
+                            .input-button-container {
+                                display: block;
+                                padding: 0;
+                            }
+                        }
                     }
                 }
             }
         }
-
-
-
+        
+        
+        
     }
     
     
@@ -250,6 +278,9 @@
 
 
 @media screen and(min-width:850px) {
+    .first-fold {
+        background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../../public/images/image-hero-desktop.jpg') no-repeat center center/cover;
+    }
     .container {
         margin-left: 15%;
         margin-right: 15%;
@@ -262,5 +293,28 @@
         margin-right: auto;
         max-width: 730px;
         width: 73%;
-    }   
+    }
+    
+    body {
+
+        .first-fold {
+            .fixed-hamburger {
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+        }
+
+        .pledge-modal{
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        &.thankyou-open {
+            .thankyou-modal {
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+
+            }
+        }
+    }
 }

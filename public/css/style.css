@@ -95,7 +95,7 @@ body {
 
 .first-fold {
   height: 300px;
-  background: url("../../public/images/image-hero-mobile.jpg") no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../public/images/image-hero-mobile.jpg") no-repeat center center/cover;
   padding: 32px 25px 0;
   box-sizing: border-box;
 }
@@ -118,7 +118,6 @@ body {
   background-color: #fff;
   list-style-type: none;
   border-radius: 8px;
-  font-weight: 500;
 }
 
 body.hamburger-open {
@@ -483,6 +482,9 @@ body.thankyou-open .thankyou-modal {
     margin-right: 10%;
   }
 
+  body .card {
+    padding: 45px;
+  }
   body .first-fold .fixed-hamburger {
     display: flex;
     justify-content: space-between;
@@ -563,6 +565,7 @@ body.thankyou-open .thankyou-modal {
   }
   body.back-project-open .pledge-modal .pledge-option {
     position: relative;
+    padding: 28px;
   }
   body.back-project-open .pledge-modal .pledge-option .radio-container .label-condition-container .label:hover {
     color: #3CB3AB;
@@ -571,6 +574,9 @@ body.thankyou-open .thankyou-modal {
     padding-top: 0;
     padding-left: 5px;
     display: inline;
+  }
+  body.back-project-open .pledge-modal .pledge-option .radio-container .label-condition-container .pledge-condition p.text-gray {
+    margin: 25px 0 29px 0;
   }
   body.back-project-open .pledge-modal .pledge-option .remaining-container {
     position: absolute;
@@ -581,12 +587,18 @@ body.thankyou-open .thankyou-modal {
   body.back-project-open .pledge-modal .pledge-option .payment-container {
     flex-direction: row;
     justify-content: space-between;
+    padding: 0;
   }
   body.back-project-open .pledge-modal .pledge-option .payment-container label {
     width: unset;
+    padding: 0;
   }
   body.back-project-open .pledge-modal .pledge-option .payment-container .input-button-container {
     display: block;
+    padding: 0;
+  }
+  body.back-project-open .pledge-modal .pledge-option .payment-container .input-button-container input {
+    padding: 17px 20px 17px 45px;
   }
   body.back-project-open .pledge-modal .pledge-option .payment-container::after {
     top: 1px;
@@ -594,6 +606,18 @@ body.thankyou-open .thankyou-modal {
   body.back-project-open .pledge-modal .pledge-option.selected .radio-container .label-condition-container .label:hover {
     color: #000;
     cursor: default;
+  }
+  body.back-project-open .pledge-modal .pledge-option.selected .payment-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 0 20px 0;
+  }
+  body.back-project-open .pledge-modal .pledge-option.selected .payment-container label {
+    padding: 0;
+  }
+  body.back-project-open .pledge-modal .pledge-option.selected .payment-container .input-button-container {
+    display: block;
+    padding: 0;
   }
 }
 @media screen and (min-width: 650px) {
@@ -623,6 +647,10 @@ body.thankyou-open .thankyou-modal {
   }
 }
 @media screen and (min-width: 850px) {
+  .first-fold {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../public/images/image-hero-desktop.jpg") no-repeat center center/cover;
+  }
+
   .container {
     margin-left: 15%;
     margin-right: 15%;
@@ -634,6 +662,19 @@ body.thankyou-open .thankyou-modal {
     margin-right: auto;
     max-width: 730px;
     width: 73%;
+  }
+
+  body .first-fold .fixed-hamburger {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  body .pledge-modal {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  body.thankyou-open .thankyou-modal {
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
   }
 }
 
