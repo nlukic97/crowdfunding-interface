@@ -99,7 +99,7 @@ html {
 
 .first-fold {
   height: 300px;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../public/images/image-hero-mobile.jpg") no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./images/image-hero-mobile.jpg") no-repeat center center/cover;
   padding: 32px 25px 0;
   box-sizing: border-box;
 }
@@ -141,7 +141,7 @@ body.hamburger-open .first-fold .fixed-hamburger {
   z-index: 2;
 }
 body.hamburger-open .first-fold .fixed-hamburger .logo-hamburger-container #hamburger-icon {
-  content: url("../../public/images/icon-close-menu.svg");
+  content: url("./images/icon-close-menu.svg");
 }
 body.hamburger-open .first-fold .fixed-hamburger .menu {
   display: block;
@@ -655,7 +655,7 @@ body.thankyou-open .thankyou-modal h2 {
 }
 @media screen and (min-width: 850px) {
   .first-fold {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../public/images/image-hero-desktop.jpg") no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./images/image-hero-desktop.jpg") no-repeat center center/cover;
   }
 
   .container {
