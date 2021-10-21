@@ -17,15 +17,7 @@
         //_remaining_container.scss
 
         button.btn {
-            margin-top: 20px;
-
-            &.available {
-                display: block;
-            }
-            &.out-of-stock {
-                display: none;
-            }
-            
+            margin-top: 20px;            
         }
 
         &.out-of-stock {

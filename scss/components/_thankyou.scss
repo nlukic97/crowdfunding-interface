@@ -2,9 +2,21 @@
     display: none;
 }
 
-// body.thankyou-message {
-//     display: block;
-//     position: fixed;
-//     top: 20vh;
-//     left: 0;
-// }
+
+body {
+    &.thankyou-open {
+        overflow: hidden;
+    
+        .overlay {
+            display: block;
+        }
+        .pledge-modal {
+            display: block;
+            position: fixed;
+            top: 5vh;
+            z-index: 3;
+            height: 80vh;
+            overflow-y: scroll;
+        }
+    }
+}

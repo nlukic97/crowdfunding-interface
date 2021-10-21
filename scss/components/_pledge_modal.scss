@@ -179,6 +179,22 @@ body {
                 }
             }
 
+            &.no-payment {
+                align-items: flex-end;
+
+                &::after {
+                    top: 1px;
+                }
+
+                .input-button-container {
+                    margin-top: 24px;
+
+                    button {
+                        margin: 0;
+                    }
+                }
+            }
+
         }
 
         
