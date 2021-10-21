@@ -39,6 +39,10 @@ body {
   max-width: 730px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .overlay {
   display: none;
   width: 100vw;
@@ -479,7 +483,7 @@ body.thankyou-open .thankyou-modal h2 {
   margin-top: 45px;
 }
 
-@media screen and (min-width: 572px) {
+@media screen and (min-width: 638px) {
   .container {
     margin-left: 10%;
     margin-right: 10%;

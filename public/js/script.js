@@ -13,7 +13,9 @@ document.getElementById('exit-modal-btn').addEventListener('click',function(){
 })
 
 
-
+document.querySelector('ul.menu').addEventListener('click',function(){
+    hideModal('back-project-open')
+})
 
 //adding event listeners for all the submit buttons in the pledge modal
 document.querySelectorAll('.pledge-submit-btn').forEach(function(btn){
