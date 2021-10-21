@@ -2,7 +2,10 @@
 document.getElementById('back-project-btn').addEventListener('click',function(){   
     document.body.classList.add('back-project-open') 
     handleRadioInputs()
-    
+})
+
+document.getElementById('exit-modal-btn').addEventListener('click',function(){
+    document.body.classList.remove('back-project-open')
 })
 
 function handleRadioInputs(){

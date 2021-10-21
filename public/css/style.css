@@ -302,6 +302,9 @@ body.back-project-open .pledge-modal {
   align-items: center;
   justify-content: space-between;
 }
+.pledge-modal .heading-exit-container #exit-modal-btn:hover {
+  cursor: pointer;
+}
 .pledge-modal .pledge-option {
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-sizing: border-box;

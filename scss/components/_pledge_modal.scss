@@ -23,6 +23,12 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        #exit-modal-btn {
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 
     .pledge-option {
