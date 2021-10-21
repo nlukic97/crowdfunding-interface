@@ -313,6 +313,20 @@ body.back-project-open .pledge-modal {
 .pledge-modal .pledge-option.selected:hover {
   cursor: default;
 }
+.pledge-modal .pledge-option.selected .radio-container .custom-radio {
+  position: relative;
+}
+.pledge-modal .pledge-option.selected .radio-container .custom-radio::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: #3CB3AB;
+  border-radius: 50%;
+}
 .pledge-modal .pledge-option.selected .payment-container {
   max-height: 0px;
 }
@@ -324,15 +338,23 @@ body.back-project-open .pledge-modal {
   align-items: center;
   justify-content: flex-start;
 }
+.pledge-modal .pledge-option .radio-container .custom-radio {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
 .pledge-modal .pledge-option .radio-container .label-condition-container {
   padding-left: 10px;
 }
-.pledge-modal .pledge-option .radio-container .label-condition-container label {
+.pledge-modal .pledge-option .radio-container .label-condition-container .label {
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0;
 }
-.pledge-modal .pledge-option .radio-container .label-condition-container label:hover {
+.pledge-modal .pledge-option .radio-container .label-condition-container .label:hover {
   cursor: pointer;
 }
 .pledge-modal .pledge-option .radio-container .label-condition-container .pledge-condition {

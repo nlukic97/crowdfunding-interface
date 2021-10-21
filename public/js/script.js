@@ -5,7 +5,6 @@ document.getElementById('back-project-btn').addEventListener('click',function(){
 
 //button to close the modal
 document.getElementById('exit-modal-btn').addEventListener('click',function(){
-    // document.body.classList.remove('back-project-open')
     hideModal('back-project-open')
 })
 
@@ -13,9 +12,13 @@ document.getElementById('exit-modal-btn').addEventListener('click',function(){
 document.querySelectorAll('.pledge-submit-btn').forEach(function(btn){
     btn.addEventListener('click',function(){
         let inputToSubmit = btn.parentElement.querySelector('.input-container input')
-        
+        console.log(inputToSubmit);
+        let data = {
+            reward: inputToSubmit.getAttribute('data-reward'),
+            amount: inputToSubmit.value
+        }
         if(inputToSubmit !== null){
-            console.log('Submission with payment. Value:', inputToSubmit.value);
+            console.log('Submission with payment. Value:', data);
         } else {
             console.log('Submission without payment');
         }
@@ -27,6 +30,7 @@ document.querySelectorAll('.pledge-submit-btn').forEach(function(btn){
 
 
 document.getElementById('close-thankyou-modal').addEventListener('click',function(){
+    deselectOtherOption() //Once user clicks this, it will deselect the selected option on the hidden html element
     hideModal('thankyou-open')
 })
 
@@ -39,26 +43,25 @@ var listenersSet = false;
 
 function addPledgeOptionListeners(){
     let radios = document.querySelectorAll('.pledge-modal input[type=\'radio\']')
+    let optionCards = document.querySelectorAll('.pledge-modal .pledge-option')
+    console.log(optionCards);
     
     console.log(radios);
     
     //unset these listeners when you exit the modal
-    radios.forEach(function(radio){
-        let pledgeOptionCard = radio.parentNode.parentNode
+    optionCards.forEach(function(optionCard){
+
         
         //If the option is out of stock, disable the ability to select it (and affect the its css upon click) and do not add a click listener to the component
-        if(pledgeOptionCard.classList.contains('out-of-stock')){
-            radio.setAttribute('disabled','true')
-            
+        if(optionCard.classList.contains('out-of-stock')){            
             //if pledge option is in stock, add the listener for when the radio button is changed
         } else {
-            pledgeOptionCard.addEventListener('click',function(){
+            optionCard.addEventListener('click',function(){
                 
                 //only select the element upon click once
-                if(pledgeOptionCard.classList.contains('selected') === false){
-                    radio.checked = true;
+                if(optionCard.classList.contains('selected') === false){
                     console.log('adding selected');
-                    selectNewPaymentContainer(radio)
+                    selectNewPaymentContainer(optionCard)
                 }
             })
             
@@ -71,21 +74,13 @@ function addPledgeOptionListeners(){
 
 
 function selectNewPaymentContainer(element){
-    let prevSelected = document.querySelector('.pledge-option.selected')
+
+    deselectOtherOption()
     
-    //update css from previously selected item if there is one
-    if(prevSelected){
-        prevSelected.classList.remove('selected');
-        
-        prevPaymentContainer = prevSelected.querySelector('.payment-container')
-        if(prevPaymentContainer) prevPaymentContainer.style=''
-    }
-    
-    //adding the selected to the component of the selected input
-    element.parentNode.parentNode.classList.add('selected')
-    paymentContainer = element.parentNode.parentNode.querySelector('.payment-container')
-    
-    if(paymentContainer) paymentContainer.style.maxHeight = paymentContainer.scrollHeight + 'px'
+    //adding the selected to the pledge option that the user clicked
+    element.classList.add('selected')
+    paymentContainer = element.querySelector('.payment-container')
+    paymentContainer.style.maxHeight = paymentContainer.scrollHeight + 'px'
 }
 
 
@@ -95,4 +90,17 @@ function showModal(className){
 
 function hideModal(className){
     document.body.classList.remove(className)
+}
+
+
+function deselectOtherOption(){
+    let prevSelected = document.querySelector('.pledge-option.selected')
+    console.log('deselecting option', prevSelected);
+    //update css from previously selected item if there is one
+    if(prevSelected){
+        prevSelected.classList.remove('selected');
+        
+        prevPaymentContainer = prevSelected.querySelector('.payment-container')
+        if(prevPaymentContainer) prevPaymentContainer.style=''
+    }
 }

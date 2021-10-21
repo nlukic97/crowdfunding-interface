@@ -162,10 +162,10 @@
     <div class="card pledge-option">
       
       <div class="radio-container">
-        <input type="radio" name="reward" id="no-reward">
+        <div class="custom-radio"></div>
         
         <div class="label-condition-container">
-          <label for="no-reward">Pledge with no reward</label>
+          <span class="label">Pledge with no reward</span>
         </div>
       </div>
       
@@ -173,9 +173,9 @@
       
       <div class="payment-container">
         <div class="input-button-container">
-          <label for="pledge-no-payment" class="text-gray">Enter your pledge</label>
+          <label for="pledge-no-reward" class="text-gray">Enter your pledge</label>
           <div class="input-container">
-            <input type="number" name="pledge-no-payment" id="pledge-no-payment" value="1" min="0">
+            <input type="number" name="pledge-no-reward" id="pledge-no-reward" value="1" min="0" data-reward='no reward'>
           </div>
           <button class="btn pledge-submit-btn">Continue</button>
         </div>
@@ -189,10 +189,10 @@
     <div class="card pledge-option">
       
       <div class="radio-container">
-        <input type="radio" name="reward" id="bamboo">
+        <div class="custom-radio"></div>
         
         <div class="label-condition-container">
-          <label for="bamboo">Bamboo Stand</label>
+          <span class="label">Bamboo Stand</span>
           <div class="pledge-condition"><span>Pledge $25 or more</span></div>
         </div>
         
@@ -210,7 +210,7 @@
         
         <div class="input-button-container">
           <div class="input-container">
-            <input type="number" name="pledge-bamboo" id="pledge-bamboo" value="25" min="25">
+            <input type="number" name="pledge-bamboo" id="pledge-bamboo" value="25" min="25" data-reward='Bamboo Stand'>
           </div>
           <button class="btn pledge-submit-btn">Continue</button>
         </div>
@@ -221,10 +221,10 @@
     <div class="card pledge-option">
       
       <div class="radio-container">
-        <input type="radio" name="reward" id="black-edition">
+        <div class="custom-radio"></div>
         
         <div class="label-condition-container">
-          <label for="black-edition">Black Edition Stand</label>
+          <span class="label">Black Edition Stand</span>
           <div class="pledge-condition"><span>Pledge $75 or more</span></div>
         </div>
         
@@ -242,7 +242,7 @@
         
         <div class="input-button-container">
           <div class="input-container">
-            <input type="number" name="pledge-black-edition" id="pledge-black-edition" value="75" min="75">
+            <input type="number" name="pledge-black-edition" id="pledge-black-edition" value="75" min="75" data-reward='Black Edition Stand'>
           </div>
           <button class="btn pledge-submit-btn">Continue</button>
         </div>
@@ -253,10 +253,10 @@
     <div class="card pledge-option out-of-stock">
       
       <div class="radio-container">
-        <input type="radio" name="reward" id="mahogany">
+        <div class="custom-radio"></div>
         
         <div class="label-condition-container">
-          <label for="mahogany">Mahogany Special Edition</label>
+          <span class="label">Mahogany Special Edition</span>
           <div class="pledge-condition"><span>Pledge $200 or more</span></div>
         </div>
         
