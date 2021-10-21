@@ -450,7 +450,7 @@ body.back-project-open .pledge-modal {
   padding-left: 10px;
 }
 
-.thank-you-container {
+.thankyou-modal {
   display: none;
 }
 
@@ -460,13 +460,12 @@ body.thankyou-open {
 body.thankyou-open .overlay {
   display: block;
 }
-body.thankyou-open .pledge-modal {
+body.thankyou-open .thankyou-modal {
   display: block;
   position: fixed;
-  top: 5vh;
+  top: 50vh;
+  transform: translateY(-50%);
   z-index: 3;
-  height: 80vh;
-  overflow-y: scroll;
 }
 
 /*# sourceMappingURL=style.css.map */

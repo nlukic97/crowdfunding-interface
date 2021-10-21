@@ -1,4 +1,4 @@
-.thank-you-container {
+.thankyou-modal {
     display: none;
 }
 
@@ -10,13 +10,12 @@ body {
         .overlay {
             display: block;
         }
-        .pledge-modal {
+        .thankyou-modal {
             display: block;
             position: fixed;
-            top: 5vh;
+            top: 50vh;
+            transform: translateY(-50%);
             z-index: 3;
-            height: 80vh;
-            overflow-y: scroll;
         }
     }
 }
