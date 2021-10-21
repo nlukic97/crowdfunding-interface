@@ -1,7 +1,6 @@
 @import 'imports/typography';
 @import 'imports/base';
 @import 'imports/layout';
-@import 'imports/mediaQuery';
 
 @import 'sections/menu';
 @import 'sections/numbers';
@@ -14,3 +13,5 @@
 @import 'components/pledge_modal';
 @import 'components/remaining_container';
 @import 'components/thankyou';
+
+@import 'imports/mediaQuery';

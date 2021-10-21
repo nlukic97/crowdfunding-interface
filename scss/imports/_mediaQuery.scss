@@ -2,7 +2,74 @@
     .container {
         margin-left: 10%;
         margin-right: 10%;
-    }   
+    }
+    
+    body {
+        // if user opened hamburger menu, then increased screen size, hide the overlay and hamburger menu (and its icons)
+        .first-fold {
+            .fixed-hamburger {
+                .logo-hamburger-container {
+                    #hamburger-icon {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &.hamburger-open {
+            .first-fold {
+                .fixed-hamburger {
+                    position: static;
+                    width: unset;
+                    z-index: unset;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+    
+                    .logo-hamburger-container {
+                        #hamburger-icon {
+                            display: none;
+                        }
+                    }
+                    
+                    ul.menu {
+                        width: unset;
+                        border-radius: 0;
+                        margin-top: unset;
+                        display: flex;
+                        justify-content: flex-end;
+                        background-color: transparent;
+
+                        li {
+                            margin: 0 15px;
+                            font-size: 13px;
+
+                            &:not(:first-child){
+                                border-top: unset;
+                            }
+                            
+                            a {
+                                padding: 0;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .overlay {
+                display: none;
+            }
+
+            // If the user opens the hamburger menu, then makes the screen larger ('hamburger-open' class is present, this will ensure that the overlay will still be visible upon opening the 2 modals)
+            &.back-project-open, &.thankyou-open {
+                .overlay {
+                    display: block;
+                }
+            }    
+            
+        }
+    }
 }
 
 
