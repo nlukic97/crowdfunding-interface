@@ -179,21 +179,21 @@ body {
                 }
             }
 
-            &.no-payment {
-                align-items: flex-end;
+            // &.no-payment {
+            //     align-items: flex-end;
 
-                &::after {
-                    top: 1px;
-                }
+            //     &::after {
+            //         top: 1px;
+            //     }
 
-                .input-button-container {
-                    margin-top: 24px;
+            //     .input-button-container {
+            //         margin-top: 24px;
 
-                    button {
-                        margin: 0;
-                    }
-                }
-            }
+            //         button {
+            //             margin: 0;
+            //         }
+            //     }
+            // }
 
         }
 

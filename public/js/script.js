@@ -1,8 +1,6 @@
 //adding listener for click on 'back this project' button to display the modal and overlay
 document.getElementById('back-project-btn').addEventListener('click',function(){   
     showModal('back-project-open')
-    
-    
 })
 
 //button to close the modal
@@ -10,6 +8,23 @@ document.getElementById('exit-modal-btn').addEventListener('click',function(){
     // document.body.classList.remove('back-project-open')
     hideModal('back-project-open')
 })
+
+//adding event listeners for all the submit buttons in the pledge modal
+document.querySelectorAll('.pledge-submit-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+        let inputToSubmit = btn.parentElement.querySelector('.input-container input')
+        
+        if(inputToSubmit !== null){
+            console.log('Submission with payment. Value:', inputToSubmit.value);
+        } else {
+            console.log('Submission without payment');
+        }
+
+        hideModal('back-project-open')
+        showModal('thankyou-open')
+    })
+})
+
 
 document.getElementById('close-thankyou-modal').addEventListener('click',function(){
     hideModal('thankyou-open')
@@ -29,18 +44,18 @@ function addPledgeOptionListeners(){
     
     //unset these listeners when you exit the modal
     radios.forEach(function(radio){
-        let option = radio.parentNode.parentNode
+        let pledgeOptionCard = radio.parentNode.parentNode
         
         //If the option is out of stock, disable the ability to select it (and affect the its css upon click) and do not add a click listener to the component
-        if(option.classList.contains('out-of-stock')){
+        if(pledgeOptionCard.classList.contains('out-of-stock')){
             radio.setAttribute('disabled','true')
             
             //if pledge option is in stock, add the listener for when the radio button is changed
         } else {
-            option.addEventListener('click',function(){
+            pledgeOptionCard.addEventListener('click',function(){
                 
                 //only select the element upon click once
-                if(option.classList.contains('selected') === false){
+                if(pledgeOptionCard.classList.contains('selected') === false){
                     radio.checked = true;
                     console.log('adding selected');
                     selectNewPaymentContainer(radio)
@@ -52,21 +67,7 @@ function addPledgeOptionListeners(){
 }
 
 
-//adding event listeners for all the submit buttons in the pledge modal
-document.querySelectorAll('.pledge-submit-btn').forEach(function(btn){
-    btn.addEventListener('click',function(){
-        let inputToSubmit = btn.parentElement.querySelector('.input-container input')
-        
-        if(inputToSubmit !== null){
-            console.log('Submission with payment. Value:', inputToSubmit.value);
-        } else {
-            console.log('Submission without payment');
-        }
 
-        hideModal('back-project-open')
-        showModal('thankyou-open')
-    })
-})
 
 
 function selectNewPaymentContainer(element){

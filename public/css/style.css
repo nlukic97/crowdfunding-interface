@@ -417,18 +417,6 @@ body.back-project-open .pledge-modal {
   margin: 0 0 0 5px;
   padding: 17px 20px;
 }
-.pledge-modal .pledge-option .payment-container.no-payment {
-  align-items: flex-end;
-}
-.pledge-modal .pledge-option .payment-container.no-payment::after {
-  top: 1px;
-}
-.pledge-modal .pledge-option .payment-container.no-payment .input-button-container {
-  margin-top: 24px;
-}
-.pledge-modal .pledge-option .payment-container.no-payment .input-button-container button {
-  margin: 0;
-}
 
 .remaining-container {
   display: flex;
