@@ -444,4 +444,8 @@ body.back-project-open .pledge-modal {
   padding-left: 10px;
 }
 
+.thank-you-container {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */
