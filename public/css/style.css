@@ -475,6 +475,9 @@ body.thankyou-open .thankyou-modal {
   transform: translateY(-50%);
   z-index: 3;
 }
+body.thankyou-open .thankyou-modal h2 {
+  margin-top: 45px;
+}
 
 @media screen and (min-width: 572px) {
   .container {
