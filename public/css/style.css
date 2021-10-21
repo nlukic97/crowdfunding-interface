@@ -205,25 +205,6 @@ body.hamburger-open .first-fold .fixed-hamburger .menu li a {
   margin: 10px 0;
   display: block;
 }
-.rewards.card .reward.card .remaining-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.rewards.card .reward.card .remaining-container .amount {
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 100%;
-  letter-spacing: 0;
-  color: #000;
-}
-.rewards.card .reward.card .remaining-container .amount-info {
-  color: #7A7A7A;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 100%;
-  padding-left: 10px;
-}
 .rewards.card .reward.card button.btn {
   margin-top: 20px;
 }
@@ -357,6 +338,9 @@ body.back-project-open .pledge-modal {
   font-size: 14px;
   padding-top: 5px;
 }
+.pledge-modal .pledge-option .remaining-container .amount {
+  font-size: 18px;
+}
 .pledge-modal .pledge-option .payment-container {
   overflow: hidden;
   max-height: 0px;
@@ -426,6 +410,26 @@ body.back-project-open .pledge-modal {
 .pledge-modal .pledge-option .payment-container .input-button-container button {
   margin: 0 5px;
   padding: 17px 20px;
+}
+
+.remaining-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.remaining-container .amount {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #000;
+}
+.remaining-container .amount-info {
+  color: #7A7A7A;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 100%;
+  padding-left: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

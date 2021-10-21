@@ -1,0 +1,22 @@
+.remaining-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .amount {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 100%;
+        letter-spacing: 0;
+        color: #000;
+    }
+
+    .amount-info {
+        color: #7A7A7A;
+        font-size: 15px;
+        letter-spacing: 0;
+        line-height: 100%;
+        padding-left: 10px;
+    }
+}
+
