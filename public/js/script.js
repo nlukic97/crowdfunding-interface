@@ -26,6 +26,8 @@ document.querySelectorAll('.pledge-submit-btn').forEach(function(btn){
         }
         
         console.log('Data to submit', data);
+
+        appendAmount(data.amount, data.reward)
         
         hideModal('back-project-open')
         showModal('thankyou-open')
@@ -102,4 +104,15 @@ function deselectOtherOption(){
         prevPaymentContainer = prevSelected.querySelector('.payment-container')
         if(prevPaymentContainer) prevPaymentContainer.style=''
     }
+}
+
+function appendAmount(amountToAdd, reward){
+    
+    console.log(`The reward is ${reward}`);
+    let curr = document.getElementById('gathered').innerText.replaceAll(',','')
+    let currBakcers = document.getElementById('backers').innerText
+    console.log(curr);
+
+    document.getElementById('gathered').innerText = parseInt(curr) + parseInt(amountToAdd) //increase amount gathered
+    document.getElementById('backers').innerText = parseInt(currBakcers) + 1 //increase backers number
 }
