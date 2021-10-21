@@ -61,19 +61,19 @@ body {
   margin-bottom: 25px;
 }
 
-.info.card {
+.info {
   position: relative;
   margin-top: -30px;
   padding-top: 0;
   background-color: #fff;
 }
-.info.card .logo2-container {
+.info .logo2-container {
   height: 30px;
 }
-.info.card .logo2-container #logo2 {
+.info .logo2-container #logo2 {
   transform: translateY(-30px);
 }
-.info.card .buttons-container {
+.info .buttons-container {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -247,9 +247,6 @@ button.bookmark-button:hover #bookmark-circle {
 }
 button.bookmark-button span {
   display: none;
-  font-weight: 700;
-  padding-left: 16px;
-  color: #7A7A7A;
 }
 button.bookmark-button.bookmarked #bookmark-circle {
   fill: #147A73;
@@ -480,7 +477,7 @@ body.thankyou-open .thankyou-modal {
   z-index: 3;
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 572px) {
   .container {
     margin-left: 10%;
     margin-right: 10%;
@@ -519,11 +516,26 @@ body.thankyou-open .thankyou-modal {
     padding: 0;
     color: #fff;
   }
+  body.hamburger-open .first-fold .fixed-hamburger ul.menu li a:hover {
+    text-decoration: underline;
+  }
   body.hamburger-open .overlay {
     display: none;
   }
   body.hamburger-open.back-project-open .overlay, body.hamburger-open.thankyou-open .overlay {
     display: block;
+  }
+  body .info .buttons-container .bookmark-button {
+    box-sizing: border-box;
+  }
+  body .info .buttons-container .bookmark-button span {
+    display: block;
+    font-weight: 700;
+    padding: 0 25px 0 15px;
+    color: #7A7A7A;
+  }
+  body .info .buttons-container .bookmark-button.bookmarked span::after {
+    content: "ed";
   }
 }
 @media screen and (min-width: 850px) {

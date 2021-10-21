@@ -1,4 +1,4 @@
-@media screen and(min-width:550px) {
+@media screen and(min-width:572px) {
     .container {
         margin-left: 10%;
         margin-right: 10%;
@@ -15,7 +15,7 @@
                 }
             }
         }
-
+        
         &.hamburger-open {
             .first-fold {
                 .fixed-hamburger {
@@ -25,7 +25,7 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: flex-start;
-    
+                    
                     .logo-hamburger-container {
                         #hamburger-icon {
                             display: none;
@@ -39,11 +39,11 @@
                         display: flex;
                         justify-content: flex-end;
                         background-color: transparent;
-
+                        
                         li {
                             margin: 0 15px;
                             font-size: 13px;
-
+                            
                             &:not(:first-child){
                                 border-top: unset;
                             }
@@ -51,6 +51,10 @@
                             a {
                                 padding: 0;
                                 color: #fff;
+                                
+                                &:hover {
+                                    text-decoration: underline;
+                                }
                             }
                         }
                     }
@@ -60,7 +64,7 @@
             .overlay {
                 display: none;
             }
-
+            
             // If the user opens the hamburger menu, then makes the screen larger ('hamburger-open' class is present, this will ensure that the overlay will still be visible upon opening the 2 modals)
             &.back-project-open, &.thankyou-open {
                 .overlay {
@@ -68,6 +72,31 @@
                 }
             }    
             
+        }
+        
+        
+        .info {
+            .buttons-container {
+                .bookmark-button {
+                    // width: 190px;
+                    box-sizing: border-box;
+
+                    span {
+                        display: block;
+                        font-weight: 700;
+                        padding: 0 25px 0 15px;
+                        color: #7A7A7A;
+                    }
+
+                    &.bookmarked {                        
+                        span {
+                            &::after {
+                                content:'ed';
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
