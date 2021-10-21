@@ -8,6 +8,36 @@
         // if user opened hamburger menu, then increased screen size, hide the overlay and hamburger menu (and its icons)
         .first-fold {
             .fixed-hamburger {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                
+                ul.menu {
+                    border-radius: 0;
+                    margin-top: unset;
+                    display: flex;
+                    justify-content: flex-end;
+                    background-color: transparent;
+                    
+                    li {
+                        margin: 0 15px;
+                        font-size: 13px;
+                        
+                        &:not(:first-child){
+                            border-top: unset;
+                        }
+                        
+                        a {
+                            padding: 0;
+                            color: #fff;
+                            text-decoration: none;
+                            
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
                 .logo-hamburger-container {
                     #hamburger-icon {
                         display: none;
@@ -16,16 +46,10 @@
             }
         }
         
+        // just in case the user opens the hamburger and then increases screen size
         &.hamburger-open {
             .first-fold {
                 .fixed-hamburger {
-                    position: static;
-                    width: unset;
-                    z-index: unset;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: flex-start;
-                    
                     .logo-hamburger-container {
                         #hamburger-icon {
                             display: none;
@@ -33,12 +57,9 @@
                     }
                     
                     ul.menu {
-                        width: unset;
-                        border-radius: 0;
                         margin-top: unset;
                         display: flex;
                         justify-content: flex-end;
-                        background-color: transparent;
                         
                         li {
                             margin: 0 15px;
@@ -77,17 +98,18 @@
         
         .info {
             .buttons-container {
+                
                 .bookmark-button {
                     // width: 190px;
                     box-sizing: border-box;
-
+                    
                     span {
                         display: block;
                         font-weight: 700;
                         padding: 0 25px 0 15px;
                         color: #7A7A7A;
                     }
-
+                    
                     &.bookmarked {                        
                         span {
                             &::after {
@@ -98,8 +120,133 @@
                 }
             }
         }
+        
+        
+        
+        .rewards.card {
+            .reward.card {
+                .remaining-container {
+                    display: inline-block;
+                    margin-top: 5px;
+                }
+                
+                button.btn {
+                    float: right;
+                    margin-top: unset;
+                }
+            }
+        }
+
+        &.back-project-open {
+            .pledge-modal {
+                .pledge-option {
+                    position: relative;
+
+                    .radio-container {
+                        .label-condition-container {
+                            .label {
+                                &:hover {
+                                    color: #3CB3AB;
+                                }
+                            }
+                            .pledge-condition {
+                                padding-top: 0;
+                                padding-left: 5px;
+                                display: inline;
+                            }
+                        }
+                    }
+
+                    .remaining-container {
+                        position: absolute;
+                        top: 0;
+                        right: 24px; //cthis might change, confirm
+                        display: inline-block;
+                    }
+
+                    .payment-container {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        // padding: 0;
+
+                        label {
+                            width: unset;
+                            // padding: 19px 0 24px 0;
+                            // padding: 0;
+                        }
+
+                        .input-button-container {
+                            display: block;
+                            // padding: 0;
+                        }
+
+                        &::after {
+                            top: 1px;
+                        }
+                    }
+
+
+                    &.selected {
+                        .radio-container {
+                            .label-condition-container {
+                                .label {
+                                    &:hover {
+                                        color: #000;
+                                        cursor: default;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+    }
+    
+    
+}
+
+
+@media screen and(min-width:650px) {
+    body {
+        .numbers.card {
+            .numbers-container {
+                padding-bottom: 40px;
+                flex-direction: row;
+                
+                .number-element {
+                    flex: 1;
+                    text-align: left;
+                    padding-right: 5%;
+                    
+                    &:nth-child(1), &:nth-child(2){
+                        &::after {
+                            content:'';
+                            position: absolute;
+                            bottom: unset;
+                            left: unset;
+                            top: 50%;
+                            right: 0;
+                            transform: translateY(-50%);
+                            height: 63px;
+                            width: 1px;
+                            background-color: rgba(0, 0, 0,0.15);
+                        }
+                    }
+                    
+                    &:nth-child(2), &:nth-child(3){
+                        padding-left: 8%;
+                    }
+                    
+                }
+            }
+        }
     }
 }
+
 
 
 @media screen and(min-width:850px) {

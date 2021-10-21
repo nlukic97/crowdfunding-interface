@@ -483,27 +483,43 @@ body.thankyou-open .thankyou-modal {
     margin-right: 10%;
   }
 
-  body .first-fold .fixed-hamburger .logo-hamburger-container #hamburger-icon {
-    display: none;
-  }
-  body.hamburger-open .first-fold .fixed-hamburger {
-    position: static;
-    width: unset;
-    z-index: unset;
+  body .first-fold .fixed-hamburger {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
   }
-  body.hamburger-open .first-fold .fixed-hamburger .logo-hamburger-container #hamburger-icon {
-    display: none;
-  }
-  body.hamburger-open .first-fold .fixed-hamburger ul.menu {
-    width: unset;
+  body .first-fold .fixed-hamburger ul.menu {
     border-radius: 0;
     margin-top: unset;
     display: flex;
     justify-content: flex-end;
     background-color: transparent;
+  }
+  body .first-fold .fixed-hamburger ul.menu li {
+    margin: 0 15px;
+    font-size: 13px;
+  }
+  body .first-fold .fixed-hamburger ul.menu li:not(:first-child) {
+    border-top: unset;
+  }
+  body .first-fold .fixed-hamburger ul.menu li a {
+    padding: 0;
+    color: #fff;
+    text-decoration: none;
+  }
+  body .first-fold .fixed-hamburger ul.menu li a:hover {
+    text-decoration: underline;
+  }
+  body .first-fold .fixed-hamburger .logo-hamburger-container #hamburger-icon {
+    display: none;
+  }
+  body.hamburger-open .first-fold .fixed-hamburger .logo-hamburger-container #hamburger-icon {
+    display: none;
+  }
+  body.hamburger-open .first-fold .fixed-hamburger ul.menu {
+    margin-top: unset;
+    display: flex;
+    justify-content: flex-end;
   }
   body.hamburger-open .first-fold .fixed-hamburger ul.menu li {
     margin: 0 15px;
@@ -536,6 +552,74 @@ body.thankyou-open .thankyou-modal {
   }
   body .info .buttons-container .bookmark-button.bookmarked span::after {
     content: "ed";
+  }
+  body .rewards.card .reward.card .remaining-container {
+    display: inline-block;
+    margin-top: 5px;
+  }
+  body .rewards.card .reward.card button.btn {
+    float: right;
+    margin-top: unset;
+  }
+  body.back-project-open .pledge-modal .pledge-option {
+    position: relative;
+  }
+  body.back-project-open .pledge-modal .pledge-option .radio-container .label-condition-container .label:hover {
+    color: #3CB3AB;
+  }
+  body.back-project-open .pledge-modal .pledge-option .radio-container .label-condition-container .pledge-condition {
+    padding-top: 0;
+    padding-left: 5px;
+    display: inline;
+  }
+  body.back-project-open .pledge-modal .pledge-option .remaining-container {
+    position: absolute;
+    top: 0;
+    right: 24px;
+    display: inline-block;
+  }
+  body.back-project-open .pledge-modal .pledge-option .payment-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  body.back-project-open .pledge-modal .pledge-option .payment-container label {
+    width: unset;
+  }
+  body.back-project-open .pledge-modal .pledge-option .payment-container .input-button-container {
+    display: block;
+  }
+  body.back-project-open .pledge-modal .pledge-option .payment-container::after {
+    top: 1px;
+  }
+  body.back-project-open .pledge-modal .pledge-option.selected .radio-container .label-condition-container .label:hover {
+    color: #000;
+    cursor: default;
+  }
+}
+@media screen and (min-width: 650px) {
+  body .numbers.card .numbers-container {
+    padding-bottom: 40px;
+    flex-direction: row;
+  }
+  body .numbers.card .numbers-container .number-element {
+    flex: 1;
+    text-align: left;
+    padding-right: 5%;
+  }
+  body .numbers.card .numbers-container .number-element:nth-child(1)::after, body .numbers.card .numbers-container .number-element:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    bottom: unset;
+    left: unset;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 63px;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+  body .numbers.card .numbers-container .number-element:nth-child(2), body .numbers.card .numbers-container .number-element:nth-child(3) {
+    padding-left: 8%;
   }
 }
 @media screen and (min-width: 850px) {
