@@ -1,12 +1,19 @@
+// ------------- init -------------
+
+
 //adding listener for click on 'back this project' button to display the modal and overlay
 document.getElementById('back-project-btn').addEventListener('click',function(){   
     showModal('back-project-open')
 })
 
+
 //button to close the modal
 document.getElementById('exit-modal-btn').addEventListener('click',function(){
     hideModal('back-project-open')
 })
+
+
+
 
 //adding event listeners for all the submit buttons in the pledge modal
 document.querySelectorAll('.pledge-submit-btn').forEach(function(btn){
@@ -17,64 +24,56 @@ document.querySelectorAll('.pledge-submit-btn').forEach(function(btn){
             reward: inputToSubmit.getAttribute('data-reward'),
             amount: inputToSubmit.value
         }
-        if(inputToSubmit !== null){
-            console.log('Submission with payment. Value:', data);
-        } else {
-            console.log('Submission without payment');
-        }
-
+        
+        console.log('Data to submit', data);
+        
         hideModal('back-project-open')
         showModal('thankyou-open')
     })
 })
 
 
+
+// Once user clicks this, it will unselect the selected option on the pledging modal
 document.getElementById('close-thankyou-modal').addEventListener('click',function(){
-    deselectOtherOption() //Once user clicks this, it will deselect the selected option on the hidden html element
+    deselectOtherOption()
     hideModal('thankyou-open')
 })
 
 
-addPledgeOptionListeners()
 
 
+// ------------ Methods ------------
 
-var listenersSet = false;
+// selecting all options in the pledge modal to add (or not add) a click event listener
 
-function addPledgeOptionListeners(){
-    let radios = document.querySelectorAll('.pledge-modal input[type=\'radio\']')
-    let optionCards = document.querySelectorAll('.pledge-modal .pledge-option')
-    console.log(optionCards);
+document.querySelectorAll('.pledge-modal .pledge-option').forEach(function(optionCard){
     
-    console.log(radios);
-    
-    //unset these listeners when you exit the modal
-    optionCards.forEach(function(optionCard){
+    //Only add the click event listener for options that are in stock (do not contain the 'out-of-stock' class)
+    if(optionCard.classList.contains('out-of-stock') === false){   
 
-        
-        //If the option is out of stock, disable the ability to select it (and affect the its css upon click) and do not add a click listener to the component
-        if(optionCard.classList.contains('out-of-stock')){            
-            //if pledge option is in stock, add the listener for when the radio button is changed
-        } else {
-            optionCard.addEventListener('click',function(){
-                
-                //only select the element upon click once
-                if(optionCard.classList.contains('selected') === false){
-                    console.log('adding selected');
-                    selectNewPaymentContainer(optionCard)
-                }
-            })
-            
-        }
-    })
-}
+        optionCard.addEventListener('click',function(){    
+            // If it is already selected, we will not re-select it
+            if(optionCard.classList.contains('selected') === false){
+                selectNewPaymentContainer(optionCard)
+            }
+        })
+
+    }
+})
+
+
+
+
+
+
 
 
 
 
 
 function selectNewPaymentContainer(element){
-
+    
     deselectOtherOption()
     
     //adding the selected to the pledge option that the user clicked
