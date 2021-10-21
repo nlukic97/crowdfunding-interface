@@ -297,6 +297,11 @@ body.back-project-open .pledge-modal {
 .pledge-modal {
   display: none;
 }
+.pledge-modal .heading-exit-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .pledge-modal .pledge-option {
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-sizing: border-box;

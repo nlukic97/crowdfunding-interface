@@ -18,6 +18,12 @@ body {
 
 .pledge-modal {
     display: none;
+    
+    .heading-exit-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     .pledge-option {
         border: 1px solid rgba(0, 0, 0, 0.15);
