@@ -11,7 +11,7 @@ body {
             top: 5vh;
             z-index: 3;
             height: 80vh;
-            overflow: scroll;
+            overflow-y: scroll;
         }
     }
 }
@@ -22,6 +22,7 @@ body {
     .pledge-option {
         border: 1px solid rgba(0, 0, 0, 0.15);
         box-sizing: border-box;
+        padding: 24px;
 
         &:hover {
             cursor: pointer;
@@ -76,6 +77,8 @@ body {
         }
 
         .remaining-container {
+            margin: 25px 0 0;
+
             .amount {
                 font-size: 18px;
             }
@@ -94,7 +97,7 @@ body {
             &::after {
                 content:'';
                 position: absolute;
-                top: 2px;
+                top: 26px;
                 left: 0;
                 width: 100%;
                 height: 1px;
@@ -105,7 +108,7 @@ body {
                 display: inline-block;
                 width: 100%;
                 text-align: center;
-                margin: 24px 0;
+                padding: 48px 0 24px 0;
             }
 
             .input-button-container{
@@ -131,7 +134,7 @@ body {
                     }
 
                     input {
-                        margin: 0 5px;
+                        margin: 0 5px 0 0;
                         padding: 14px 20px 14px 35px;
                         border-radius: 100px;
                         outline: none;
@@ -159,7 +162,7 @@ body {
                 }
     
                 button {
-                    margin: 0 5px;
+                    margin: 0 0 0 5px;
                     padding: 17px 20px;
                 }
             }

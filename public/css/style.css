@@ -291,7 +291,7 @@ body.back-project-open .pledge-modal {
   top: 5vh;
   z-index: 3;
   height: 80vh;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .pledge-modal {
@@ -300,6 +300,7 @@ body.back-project-open .pledge-modal {
 .pledge-modal .pledge-option {
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
+  padding: 24px;
 }
 .pledge-modal .pledge-option:hover {
   cursor: pointer;
@@ -338,6 +339,9 @@ body.back-project-open .pledge-modal {
   font-size: 14px;
   padding-top: 5px;
 }
+.pledge-modal .pledge-option .remaining-container {
+  margin: 25px 0 0;
+}
 .pledge-modal .pledge-option .remaining-container .amount {
   font-size: 18px;
 }
@@ -353,7 +357,7 @@ body.back-project-open .pledge-modal {
 .pledge-modal .pledge-option .payment-container::after {
   content: "";
   position: absolute;
-  top: 2px;
+  top: 26px;
   left: 0;
   width: 100%;
   height: 1px;
@@ -363,7 +367,7 @@ body.back-project-open .pledge-modal {
   display: inline-block;
   width: 100%;
   text-align: center;
-  margin: 24px 0;
+  padding: 48px 0 24px 0;
 }
 .pledge-modal .pledge-option .payment-container .input-button-container {
   display: inline-block;
@@ -386,7 +390,7 @@ body.back-project-open .pledge-modal {
   z-index: 1;
 }
 .pledge-modal .pledge-option .payment-container .input-button-container .input-container input {
-  margin: 0 5px;
+  margin: 0 5px 0 0;
   padding: 14px 20px 14px 35px;
   border-radius: 100px;
   outline: none;
@@ -408,7 +412,7 @@ body.back-project-open .pledge-modal {
   background: orange;
 }
 .pledge-modal .pledge-option .payment-container .input-button-container button {
-  margin: 0 5px;
+  margin: 0 0 0 5px;
   padding: 17px 20px;
 }
 
