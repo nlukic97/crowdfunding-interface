@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Commissioner', sans-serif;
+    height: 1000px;
+    background-color: #FAFAFA;
+}
+
+:root {
+    
+    font-size: 16px;
+}
+
+.container {
+    margin-left: 25px;
+    margin-right: 25px;
+    max-width: 730px;
+}
+
+html {
+    scroll-behavior: smooth;
+}

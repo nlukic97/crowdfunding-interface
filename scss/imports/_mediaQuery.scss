@@ -1,0 +1,320 @@
+@media screen and(min-width:638px) {
+    .container {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    body {
+        
+        .card {
+            padding: 45px;
+        }
+        
+        // if user opened hamburger menu, then increased screen size, hide the overlay and hamburger menu (and its icons)
+        .first-fold {
+            .fixed-hamburger {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                
+                ul.menu {
+                    border-radius: 0;
+                    margin-top: unset;
+                    display: flex;
+                    justify-content: flex-end;
+                    background-color: transparent;
+                    
+                    li {
+                        margin: 0 15px;
+                        font-size: 13px;
+                        
+                        &:not(:first-child){
+                            border-top: unset;
+                        }
+                        
+                        a {
+                            padding: 0;
+                            color: #fff;
+                            text-decoration: none;
+                            
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+                .logo-hamburger-container {
+                    #hamburger-icon {
+                        display: none;
+                    }
+                }
+            }
+        }
+        
+        // just in case the user opens the hamburger and then increases screen size
+        &.hamburger-open {
+            .first-fold {
+                .fixed-hamburger {
+                    .logo-hamburger-container {
+                        #hamburger-icon {
+                            display: none;
+                        }
+                    }
+                    
+                    ul.menu {
+                        margin-top: unset;
+                        display: flex;
+                        justify-content: flex-end;
+                        
+                        li {
+                            margin: 0 15px;
+                            font-size: 13px;
+                            
+                            &:not(:first-child){
+                                border-top: unset;
+                            }
+                            
+                            a {
+                                padding: 0;
+                                color: #fff;
+                                
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .overlay {
+                display: none;
+            }
+            
+            // If the user opens the hamburger menu, then makes the screen larger ('hamburger-open' class is present, this will ensure that the overlay will still be visible upon opening the 2 modals)
+            &.back-project-open, &.thankyou-open {
+                .overlay {
+                    display: block;
+                }
+            }    
+            
+        }
+        
+        
+        .info {
+            .buttons-container {
+                
+                .bookmark-button {
+                    // width: 190px;
+                    box-sizing: border-box;
+                    
+                    span {
+                        display: block;
+                        font-weight: 700;
+                        padding: 0 25px 0 15px;
+                        color: #7A7A7A;
+                    }
+                    
+                    &.bookmarked {                        
+                        span {
+                            &::after {
+                                content:'ed';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        
+        .rewards.card {
+            .reward.card {
+                .remaining-container {
+                    display: inline-block;
+                    margin-top: 5px;
+                }
+                
+                button.btn {
+                    float: right;
+                    margin-top: unset;
+                }
+            }
+        }
+        
+        &.back-project-open {
+            .pledge-modal {
+                .pledge-option {
+                    position: relative;
+                    padding: 28px;
+                    
+                    .radio-container {
+                        .label-condition-container {
+                            .label {
+                                &:hover {
+                                    color: #3CB3AB;
+                                }
+                            }
+                            .pledge-condition {
+                                padding-top: 0;
+                                padding-left: 5px;
+                                display: inline;
+                                p.text-gray {
+                                    margin: 25px 0 29px 0;
+                                }
+                            }
+                        }
+                    }
+                    
+                    .remaining-container {
+                        position: absolute;
+                        top: 0;
+                        right: 24px; //cthis might change, confirm
+                        display: inline-block;
+                    }
+                    
+                    .payment-container {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        // padding: 0;
+                        padding: 0;
+                        
+                        label {
+                            width: unset;
+                            padding: 0;
+                        }
+                        
+                        .input-button-container {
+                            display: block;
+                            padding: 0;
+                            
+                            input {
+                                padding: 17px 20px 17px 45px;
+                            }
+                        }
+                        
+                        &::after {
+                            top: 1px;
+                        }
+                    }
+                    
+                    
+                    &.selected {
+                        .radio-container {
+                            .label-condition-container {
+                                .label {
+                                    &:hover {
+                                        color: #000;
+                                        cursor: default;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .payment-container {
+                            flex-direction: row;
+                            justify-content: space-between;
+                            padding: 40px 0 20px 0;
+                            
+                            label {
+                                padding: 0;
+                            }
+                            
+                            .input-button-container {
+                                display: block;
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        
+    }
+    
+    
+}
+
+
+@media screen and(min-width:650px) {
+    body {
+        .numbers.card {
+            .numbers-container {
+                padding-bottom: 40px;
+                flex-direction: row;
+                
+                .number-element {
+                    flex: 1;
+                    text-align: left;
+                    padding-right: 5%;
+                    
+                    &:nth-child(1), &:nth-child(2){
+                        &::after {
+                            content:'';
+                            position: absolute;
+                            bottom: unset;
+                            left: unset;
+                            top: 50%;
+                            right: 0;
+                            transform: translateY(-50%);
+                            height: 63px;
+                            width: 1px;
+                            background-color: rgba(0, 0, 0,0.15);
+                        }
+                    }
+                    
+                    &:nth-child(2), &:nth-child(3){
+                        padding-left: 8%;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+
+
+@media screen and(min-width:850px) {
+    .first-fold {
+        background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../../public/images/image-hero-desktop.jpg') no-repeat center center/cover;
+    }
+    .container {
+        margin-left: 15%;
+        margin-right: 15%;
+    }   
+}
+
+@media screen and(min-width:950px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 730px;
+        width: 73%;
+    }
+    
+    body {
+
+        .first-fold {
+            .fixed-hamburger {
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+        }
+
+        .pledge-modal{
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        &.thankyou-open {
+            .thankyou-modal {
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+
+            }
+        }
+    }
+}

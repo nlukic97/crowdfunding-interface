@@ -1,7 +1,7 @@
 # zadatak 6 - Nikola Lukic
 
 ## Production url:
-        https://vercel.com/nlukic97/zadatak-6
+        https://zadatak-6-delta.vercel.app/
 
 ---
 

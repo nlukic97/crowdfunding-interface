@@ -1,3 +1,688 @@
+.menu li {
+  font-size: 1.13rem;
+}
 
+.text-center {
+  text-align: center;
+}
+
+.text-gray {
+  color: #7A7A7A;
+  line-height: 24px;
+  letter-spacing: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+p.text-gray {
+  margin: 25px 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Commissioner", sans-serif;
+  height: 1000px;
+  background-color: #FAFAFA;
+}
+
+:root {
+  font-size: 16px;
+}
+
+.container {
+  margin-left: 25px;
+  margin-right: 25px;
+  max-width: 730px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.overlay {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.63);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.card {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 25px;
+}
+
+.info {
+  position: relative;
+  margin-top: -30px;
+  padding-top: 0;
+  background-color: #fff;
+}
+.info .logo2-container {
+  height: 30px;
+}
+.info .logo2-container #logo2 {
+  transform: translateY(-30px);
+}
+.info .buttons-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 12px;
+  border-radius: 33.5px;
+  background-color: rgba(47, 47, 47, 0.05);
+}
+.progress-bar-container .progress-bar {
+  border-radius: inherit;
+  transition: width 1.3s ease-out 0.6s;
+  width: 0%;
+  height: inherit;
+  background-color: #3CB3AB;
+}
+
+.first-fold {
+  height: 300px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../public/images/image-hero-mobile.jpg") no-repeat center center/cover;
+  padding: 32px 25px 0;
+  box-sizing: border-box;
+}
+.first-fold .fixed-hamburger .logo-hamburger-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.first-fold .fixed-hamburger .logo-hamburger-container #hamburger-icon {
+  content: url("../../public/images/icon-hamburger.svg");
+  width: 16px;
+  height: 15px;
+}
+.first-fold .fixed-hamburger .logo-hamburger-container #hamburger-icon:hover {
+  cursor: pointer;
+}
+.first-fold .fixed-hamburger .menu {
+  display: none;
+  margin-top: 30px;
+  background-color: #fff;
+  list-style-type: none;
+  border-radius: 8px;
+}
+
+body.hamburger-open {
+  overflow: hidden;
+}
+body.hamburger-open .overlay {
+  display: block;
+  z-index: 1;
+}
+
+body.hamburger-open .first-fold {
+  position: relative;
+}
+body.hamburger-open .first-fold .fixed-hamburger {
+  position: absolute;
+  width: calc(100% - 50px);
+  z-index: 2;
+}
+body.hamburger-open .first-fold .fixed-hamburger .logo-hamburger-container #hamburger-icon {
+  content: url("../../public/images/icon-close-menu.svg");
+}
+body.hamburger-open .first-fold .fixed-hamburger .menu {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  z-index: 2;
+}
+body.hamburger-open .first-fold .fixed-hamburger .menu li:not(:first-child) {
+  border-top: 1px solid #2f2f2f;
+}
+body.hamburger-open .first-fold .fixed-hamburger .menu li a {
+  padding: 24px;
+  text-decoration: none;
+  color: #000;
+  display: block;
+}
+
+.numbers.card {
+  padding-bottom: 40px;
+}
+.numbers.card .numbers-container {
+  display: flex;
+  flex-direction: column;
+}
+.numbers.card .numbers-container .number-element {
+  position: relative;
+  padding: 24px 0;
+}
+.numbers.card .numbers-container .number-element .current-amount {
+  font-weight: 700;
+  font-size: 32px;
+}
+.numbers.card .numbers-container .number-element .current-amount#gathered::before {
+  content: "$";
+}
+.numbers.card .numbers-container .number-element .follow-text {
+  line-height: 100%;
+  padding-top: 15px;
+}
+.numbers.card .numbers-container .number-element .follow-text#goal::before {
+  content: "of $";
+}
+.numbers.card .numbers-container .number-element .follow-text#goal:after {
+  content: " backed";
+}
+.numbers.card .numbers-container .number-element:nth-child(1)::after, .numbers.card .numbers-container .number-element:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  width: 80px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.rewards.card .reward.card {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.rewards.card .reward.card:last-child {
+  margin-bottom: 0;
+}
+.rewards.card .reward.card .pledge-condition {
+  color: #3CB3AB;
+  font-weight: 500;
+  margin: 10px 0;
+  display: block;
+}
+.rewards.card .reward.card button.btn {
+  margin-top: 20px;
+}
+.rewards.card .reward.card.out-of-stock {
+  opacity: 0.5;
+}
+.rewards.card .reward.card.out-of-stock button.btn.available {
+  display: none;
+}
+.rewards.card .reward.card.out-of-stock button.btn.out-of-stock {
+  display: block;
+}
+
+button {
+  display: inline-block;
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  font-family: "Commissioner", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+button:hover {
+  cursor: pointer;
+}
+
+button.bookmark-button {
+  background-color: rgba(47, 47, 47, 0.05);
+  display: inline-block;
+  height: 56px;
+  width: min-content;
+  display: flex;
+  align-items: center;
+}
+button.bookmark-button:hover #bookmark-circle {
+  fill: #707070;
+}
+button.bookmark-button span {
+  display: none;
+}
+button.bookmark-button.bookmarked #bookmark-circle {
+  fill: #147A73;
+}
+button.bookmark-button.bookmarked #bookmark-icon {
+  fill: #ffffff;
+}
+button.bookmark-button.bookmarked span {
+  color: #147A73;
+}
+button.btn {
+  background-color: #3CB3AB;
+  color: #fff;
+  padding: 17px 42px;
+}
+button.btn:hover {
+  background-color: #147A73;
+}
+button.btn.out-of-stock {
+  background-color: #979797;
+}
+button.btn.out-of-stock:hover {
+  cursor: default;
+}
+
+body.back-project-open {
+  overflow: hidden;
+}
+body.back-project-open .overlay {
+  display: block;
+}
+body.back-project-open .pledge-modal {
+  display: block;
+  position: fixed;
+  top: 5vh;
+  z-index: 3;
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+.pledge-modal {
+  display: none;
+}
+.pledge-modal .heading-exit-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pledge-modal .heading-exit-container #exit-modal-btn:hover {
+  cursor: pointer;
+}
+.pledge-modal .pledge-option {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  padding: 24px;
+}
+.pledge-modal .pledge-option:hover {
+  cursor: pointer;
+}
+.pledge-modal .pledge-option.selected {
+  border: 2px solid #3CB3AB;
+}
+.pledge-modal .pledge-option.selected:hover {
+  cursor: default;
+}
+.pledge-modal .pledge-option.selected .radio-container .custom-radio {
+  position: relative;
+}
+.pledge-modal .pledge-option.selected .radio-container .custom-radio::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: #3CB3AB;
+  border-radius: 50%;
+}
+.pledge-modal .pledge-option.selected .payment-container {
+  max-height: 0px;
+}
+.pledge-modal .pledge-option.out-of-stock {
+  opacity: 0.5;
+}
+.pledge-modal .pledge-option .radio-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.pledge-modal .pledge-option .radio-container .custom-radio {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+.pledge-modal .pledge-option .radio-container .label-condition-container {
+  padding-left: 10px;
+}
+.pledge-modal .pledge-option .radio-container .label-condition-container .label {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0;
+}
+.pledge-modal .pledge-option .radio-container .label-condition-container .label:hover {
+  cursor: pointer;
+}
+.pledge-modal .pledge-option .radio-container .label-condition-container .pledge-condition {
+  color: #3CB3AB;
+  font-weight: 500;
+  font-size: 14px;
+  padding-top: 5px;
+}
+.pledge-modal .pledge-option .remaining-container {
+  margin: 25px 0 0;
+}
+.pledge-modal .pledge-option .remaining-container .amount {
+  font-size: 18px;
+}
+.pledge-modal .pledge-option .payment-container {
+  overflow: hidden;
+  max-height: 0px;
+  transition: all 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.pledge-modal .pledge-option .payment-container::after {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.pledge-modal .pledge-option .payment-container label {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 48px 0 24px 0;
+}
+.pledge-modal .pledge-option .payment-container .input-button-container {
+  display: inline-block;
+  box-sizing: border-box;
+}
+.pledge-modal .pledge-option .payment-container .input-button-container .input-container {
+  display: inline-block;
+  position: relative;
+  font-weight: 700;
+}
+.pledge-modal .pledge-option .payment-container .input-button-container .input-container::before {
+  content: "$";
+  font-size: 14px;
+  padding: 14px 0 14px 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+  z-index: 1;
+}
+.pledge-modal .pledge-option .payment-container .input-button-container .input-container input {
+  margin: 0 5px 0 0;
+  padding: 14px 20px 14px 35px;
+  border-radius: 100px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  position: relative;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  width: 100px;
+  box-sizing: border-box;
+}
+.pledge-modal .pledge-option .payment-container .input-button-container .input-container input::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background: orange;
+}
+.pledge-modal .pledge-option .payment-container .input-button-container button {
+  margin: 0 0 0 5px;
+  padding: 17px 20px;
+}
+
+.remaining-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.remaining-container .amount {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #000;
+}
+.remaining-container .amount-info {
+  color: #7A7A7A;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 100%;
+  padding-left: 10px;
+}
+
+.thankyou-modal {
+  display: none;
+}
+
+body.thankyou-open {
+  overflow: hidden;
+}
+body.thankyou-open .overlay {
+  display: block;
+}
+body.thankyou-open .thankyou-modal {
+  display: block;
+  position: fixed;
+  top: 50vh;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+body.thankyou-open .thankyou-modal h2 {
+  margin-top: 45px;
+}
+
+@media screen and (min-width: 638px) {
+  .container {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  body .card {
+    padding: 45px;
+  }
+  body .first-fold .fixed-hamburger {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  body .first-fold .fixed-hamburger ul.menu {
+    border-radius: 0;
+    margin-top: unset;
+    display: flex;
+    justify-content: flex-end;
+    background-color: transparent;
+  }
+  body .first-fold .fixed-hamburger ul.menu li {
+    margin: 0 15px;
+    font-size: 13px;
+  }
+  body .first-fold .fixed-hamburger ul.menu li:not(:first-child) {
+    border-top: unset;
+  }
+  body .first-fold .fixed-hamburger ul.menu li a {
+    padding: 0;
+    color: #fff;
+    text-decoration: none;
+  }
+  body .first-fold .fixed-hamburger ul.menu li a:hover {
+    text-decoration: underline;
+  }
+  body .first-fold .fixed-hamburger .logo-hamburger-container #hamburger-icon {
+    display: none;
+  }
+  body.hamburger-open .first-fold .fixed-hamburger .logo-hamburger-container #hamburger-icon {
+    display: none;
+  }
+  body.hamburger-open .first-fold .fixed-hamburger ul.menu {
+    margin-top: unset;
+    display: flex;
+    justify-content: flex-end;
+  }
+  body.hamburger-open .first-fold .fixed-hamburger ul.menu li {
+    margin: 0 15px;
+    font-size: 13px;
+  }
+  body.hamburger-open .first-fold .fixed-hamburger ul.menu li:not(:first-child) {
+    border-top: unset;
+  }
+  body.hamburger-open .first-fold .fixed-hamburger ul.menu li a {
+    padding: 0;
+    color: #fff;
+  }
+  body.hamburger-open .first-fold .fixed-hamburger ul.menu li a:hover {
+    text-decoration: underline;
+  }
+  body.hamburger-open .overlay {
+    display: none;
+  }
+  body.hamburger-open.back-project-open .overlay, body.hamburger-open.thankyou-open .overlay {
+    display: block;
+  }
+  body .info .buttons-container .bookmark-button {
+    box-sizing: border-box;
+  }
+  body .info .buttons-container .bookmark-button span {
+    display: block;
+    font-weight: 700;
+    padding: 0 25px 0 15px;
+    color: #7A7A7A;
+  }
+  body .info .buttons-container .bookmark-button.bookmarked span::after {
+    content: "ed";
+  }
+  body .rewards.card .reward.card .remaining-container {
+    display: inline-block;
+    margin-top: 5px;
+  }
+  body .rewards.card .reward.card button.btn {
+    float: right;
+    margin-top: unset;
+  }
+  body.back-project-open .pledge-modal .pledge-option {
+    position: relative;
+    padding: 28px;
+  }
+  body.back-project-open .pledge-modal .pledge-option .radio-container .label-condition-container .label:hover {
+    color: #3CB3AB;
+  }
+  body.back-project-open .pledge-modal .pledge-option .radio-container .label-condition-container .pledge-condition {
+    padding-top: 0;
+    padding-left: 5px;
+    display: inline;
+  }
+  body.back-project-open .pledge-modal .pledge-option .radio-container .label-condition-container .pledge-condition p.text-gray {
+    margin: 25px 0 29px 0;
+  }
+  body.back-project-open .pledge-modal .pledge-option .remaining-container {
+    position: absolute;
+    top: 0;
+    right: 24px;
+    display: inline-block;
+  }
+  body.back-project-open .pledge-modal .pledge-option .payment-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+  }
+  body.back-project-open .pledge-modal .pledge-option .payment-container label {
+    width: unset;
+    padding: 0;
+  }
+  body.back-project-open .pledge-modal .pledge-option .payment-container .input-button-container {
+    display: block;
+    padding: 0;
+  }
+  body.back-project-open .pledge-modal .pledge-option .payment-container .input-button-container input {
+    padding: 17px 20px 17px 45px;
+  }
+  body.back-project-open .pledge-modal .pledge-option .payment-container::after {
+    top: 1px;
+  }
+  body.back-project-open .pledge-modal .pledge-option.selected .radio-container .label-condition-container .label:hover {
+    color: #000;
+    cursor: default;
+  }
+  body.back-project-open .pledge-modal .pledge-option.selected .payment-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 0 20px 0;
+  }
+  body.back-project-open .pledge-modal .pledge-option.selected .payment-container label {
+    padding: 0;
+  }
+  body.back-project-open .pledge-modal .pledge-option.selected .payment-container .input-button-container {
+    display: block;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 650px) {
+  body .numbers.card .numbers-container {
+    padding-bottom: 40px;
+    flex-direction: row;
+  }
+  body .numbers.card .numbers-container .number-element {
+    flex: 1;
+    text-align: left;
+    padding-right: 5%;
+  }
+  body .numbers.card .numbers-container .number-element:nth-child(1)::after, body .numbers.card .numbers-container .number-element:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    bottom: unset;
+    left: unset;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 63px;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+  body .numbers.card .numbers-container .number-element:nth-child(2), body .numbers.card .numbers-container .number-element:nth-child(3) {
+    padding-left: 8%;
+  }
+}
+@media screen and (min-width: 850px) {
+  .first-fold {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../public/images/image-hero-desktop.jpg") no-repeat center center/cover;
+  }
+
+  .container {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+@media screen and (min-width: 950px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 730px;
+    width: 73%;
+  }
+
+  body .first-fold .fixed-hamburger {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  body .pledge-modal {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  body.thankyou-open .thankyou-modal {
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

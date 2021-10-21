@@ -1,0 +1,36 @@
+// ******** About section ********
+.rewards.card {
+    .reward.card {
+        border: 1px solid rgba(0,0,0,0.15);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .pledge-condition {
+            color: #3CB3AB;
+            font-weight: 500;
+            margin: 10px 0;
+            display: block;
+        }
+
+        //_remaining_container.scss
+
+        button.btn {
+            margin-top: 20px;            
+        }
+
+        &.out-of-stock {
+            opacity: 0.5;
+
+            button.btn {
+                &.available {
+                    display: none;
+                }
+                &.out-of-stock {
+                    display: block;
+                }
+            }
+        }
+    }
+}

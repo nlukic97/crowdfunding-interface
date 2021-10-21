@@ -1,0 +1,25 @@
+.thankyou-modal {
+    display: none;
+}
+
+
+body {
+    &.thankyou-open {
+        overflow: hidden;
+    
+        .overlay {
+            display: block;
+        }
+        .thankyou-modal {
+            display: block;
+            position: fixed;
+            top: 50vh;
+            transform: translateY(-50%);
+            z-index: 3;
+
+            h2 {
+                margin-top: 45px;
+            }
+        }
+    }
+}

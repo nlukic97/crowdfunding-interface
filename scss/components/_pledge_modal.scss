@@ -1,0 +1,211 @@
+body {
+    &.back-project-open {
+        overflow: hidden;
+
+        .overlay {
+            display: block;
+        }
+        .pledge-modal {
+            display: block;
+            position: fixed;
+            top: 5vh;
+            z-index: 3;
+            height: 80vh;
+            overflow-y: scroll;
+        }
+    }
+}
+
+.pledge-modal {
+    display: none;
+    
+    .heading-exit-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        #exit-modal-btn {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .pledge-option {
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        box-sizing: border-box;
+        padding: 24px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &.selected {
+            border: 2px solid #3CB3AB;
+
+            &:hover {
+                cursor: default;
+            }
+            
+            .radio-container {
+                .custom-radio {
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 12px;
+                        height: 12px;
+                        left: 50%;
+                        top: 50%;
+                        transform: translateY(-50%) translateX(-50%);
+                        background-color: #3CB3AB;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            .payment-container {
+                max-height: 0px;
+
+                
+            }
+        }
+
+        &.out-of-stock {
+            opacity: 0.5;
+        }
+
+
+
+        .radio-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            .custom-radio {
+                width: 24px;
+                height: 24px;
+                display: inline-block;
+                border-radius: 50%;
+                border: 1px solid rgba(0,0,0,.15);
+                box-sizing: border-box;
+            }
+
+            .label-condition-container {
+                padding-left: 10px;
+
+                .label {
+                    font-weight: 700;
+                    font-size: 14px;
+                    letter-spacing: 0;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+    
+                .pledge-condition {
+                    color: #3CB3AB;
+                    font-weight: 500;
+                    font-size: 14px;
+                    padding-top: 5px;
+                }
+            }
+
+        }
+
+        .remaining-container {
+            margin: 25px 0 0;
+
+            .amount {
+                font-size: 18px;
+            }
+        }
+
+        
+        .payment-container {
+            overflow: hidden;
+            max-height: 0px;
+            transition: all 1s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+
+            &::after {
+                content:'';
+                position: absolute;
+                top: 26px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color:rgba(0,0,0,0.15);;
+            }
+            
+            label {
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+                padding: 48px 0 24px 0;
+            }
+
+            .input-button-container{
+                display: inline-block;
+                box-sizing: border-box;
+
+                .input-container {
+                    display: inline-block;
+                    position: relative;
+                    font-weight: 700;
+
+                    &::before {
+                        content:'\0024';
+                        font-size: 14px;
+                        padding: 14px 0 14px 20px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        color: rgba(0,0,0,0.25);
+                        font-weight: 700;
+                        z-index: 1;
+                    }
+
+                    input {
+                        margin: 0 5px 0 0;
+                        padding: 14px 20px 14px 35px;
+                        border-radius: 100px;
+                        outline: none;
+                        border: 1px solid rgba(0, 0, 0, 0.15);
+                        
+                        position: relative;
+                        font-size: 14px;
+                        font-weight: 700;
+                        letter-spacing: 0;
+                        width: 100px;
+                        box-sizing: border-box;
+        
+                        &::before {
+                            content:'';
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 10px;
+                            height: 10px;
+                            background: orange;
+                        }
+        
+        
+                    }
+                }
+    
+                button {
+                    margin: 0 0 0 5px;
+                    padding: 17px 20px;
+                }
+            }
+        }
+
+        
+    }
+}
