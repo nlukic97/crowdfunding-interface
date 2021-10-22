@@ -1,3 +1,12 @@
+@media screen and(min-width:400px) {
+    .container {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    
+}
+
+
 @media screen and(min-width:638px) {
     .container {
         margin-left: 10%;
@@ -7,7 +16,7 @@
     body {
         
         .card {
-            padding: 45px;
+            padding: 0 45px 45px 45px;
         }
         
         // if user opened hamburger menu, then increased screen size, hide the overlay and hamburger menu (and its icons)
@@ -96,7 +105,7 @@
                 .overlay {
                     display: block;
                 }
-            }    
+            }
             
         }
         
@@ -130,6 +139,7 @@
         
         .rewards.card {
             .reward.card {
+                padding: 45px;
                 .remaining-container {
                     display: inline-block;
                     margin-top: 5px;
@@ -144,6 +154,8 @@
         
         &.back-project-open {
             .pledge-modal {
+                padding: 45px;
+                
                 .pledge-option {
                     position: relative;
                     padding: 28px;
@@ -230,7 +242,11 @@
             }
         }
         
-        
+        &.thankyou-open {
+            .thankyou-modal {
+                padding: 45px;
+            }
+        }
         
     }
     
@@ -281,40 +297,40 @@
     .first-fold {
         background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../images/image-hero-desktop.jpg') no-repeat center center/cover;
     }
-    .container {
-        margin-left: 15%;
-        margin-right: 15%;
-    }   
-}
-
-@media screen and(min-width:950px) {
-    .container {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 730px;
-        width: 73%;
+    // .container {
+        //     margin-left: 15%;
+        //     margin-right: 15%;
+        // }   
     }
     
-    body {
-
-        .first-fold {
-            .fixed-hamburger {
-                max-width: 1100px;
-                margin: 0 auto;
-            }
-        }
-
-        .pledge-modal{
-            left: 50%;
-            transform: translateX(-50%);
+    @media screen and(min-width:950px) {
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 730px;
+            width: 73%;
         }
         
-        &.thankyou-open {
-            .thankyou-modal {
+        body {
+            
+            .first-fold {
+                .fixed-hamburger {
+                    max-width: 1100px;
+                    margin: 0 auto;
+                }
+            }
+            
+            .pledge-modal{
                 left: 50%;
-                transform: translateY(-50%) translateX(-50%);
-
+                transform: translateX(-50%);
+            }
+            
+            &.thankyou-open {
+                .thankyou-modal {
+                    left: 50%;
+                    transform: translateY(-50%) translateX(-50%);
+                    
+                }
             }
         }
     }
-}
