@@ -1,8 +1,16 @@
 import * as ProgressBar from './progress.js';
 
 // ------------- init + event listeners -------------
+
 ProgressBar.update()
-var backed = false; //telling us that this user has not backed yet. if they to back the project, this will be set to true so that the number of backers cannot be increased with more donations.
+
+
+/** the number of backers will only be increased if the user 
+ * donates and this is 'false'. Upon donation, this variable 
+ * is set to 'true'. So no of backers is increased once per page load 
+ * */
+var backed = false; 
+
 
 //open 'pledge modal'
 document.getElementById('back-project-btn').addEventListener('click',function(){   
@@ -16,12 +24,12 @@ document.getElementById('exit-modal-btn').addEventListener('click',function(){
 })
 
 
-
-
-//Submit event listeners for all "pledge-submit" buttons
+//Submit event listeners for all "pledge-submit" buttons in the 'pledge modal'
 document.querySelectorAll('.pledge-submit-btn').forEach(function(btn){
+
+
     btn.addEventListener('click',function(){
-        let inputToSubmit = btn.parentElement.querySelector('.input-container input')
+        let inputToSubmit = btn.parentElement.querySelector('.input-container input') //getting the input being submitted based on its position relative to the button clicked
         
         let data = {
             reward: inputToSubmit.getAttribute('data-reward'),
@@ -36,7 +44,7 @@ document.querySelectorAll('.pledge-submit-btn').forEach(function(btn){
             hideModal('back-project-open')
             showModal('thankyou-open')
         } else {
-            console.warn('No.');
+            console.warn('No.'); //method for displaying error message goes here
         }
         
     })
