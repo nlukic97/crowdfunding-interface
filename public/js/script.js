@@ -78,6 +78,38 @@ document.querySelectorAll('.pledge-modal .pledge-option').forEach(function(optio
 })
 
 
+// when a user clicks on a button, it will open a modal and scroll to the designated donation area
+document.querySelectorAll('.btn.scrollToElement').forEach(btn=>{
+    btn.addEventListener('click',function(){
+        deselectOtherOption()
+        showModal('back-project-open')
+
+        let attr = btn.getAttribute('data-modalReward');
+        let pledgeOption = document.querySelector(`#scroll-${attr}`);
+        let pledgeModal = document.querySelector('.pledge-modal')
+        
+        // pledgeModal.scrollTop = pledgeOption.offsetTop
+    
+        // slowly scroll towards the selected pledge option after 0.5 seconds
+        setTimeout(() => {
+            var scroller = setInterval(function(){
+                pledgeModal.scrollTop = document.querySelector('.pledge-modal').scrollTop + 4
+    
+                if(
+                    pledgeModal.scrollTop + 30 >= pledgeOption.offsetTop ||
+                    (pledgeModal.scrollTop + pledgeModal.offsetHeight) >= pledgeModal.scrollHeight
+                    ){
+                    selectNewPaymentContainer(pledgeOption)
+                    clearInterval(scroller)
+                }
+            },5)
+        }, 500);
+        
+        
+    })
+})
+
+
 
 // ------------ Methods ------------
 function selectNewPaymentContainer(element){
