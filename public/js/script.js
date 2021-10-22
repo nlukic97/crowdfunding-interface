@@ -67,7 +67,8 @@ document.querySelectorAll('.pledge-modal .pledge-option').forEach(function(optio
     if(optionCard.classList.contains('out-of-stock') === false){   
 
         optionCard.addEventListener('click',function(){    
-            // If it is already selected, we will not re-select it
+
+            // If it is already selected, we will not re-select it upon clicking. If not, we will select this
             if(optionCard.classList.contains('selected') === false){
                 selectNewPaymentContainer(optionCard)
             }
