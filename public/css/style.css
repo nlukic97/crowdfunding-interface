@@ -34,8 +34,8 @@ body {
 }
 
 .container {
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 16px;
+  margin-right: 16px;
   max-width: 730px;
 }
 
@@ -286,8 +286,9 @@ body.back-project-open .pledge-modal {
   position: fixed;
   top: 5vh;
   z-index: 3;
-  height: 80vh;
+  max-height: 80vh;
   overflow-y: scroll;
+  height: min-content;
 }
 
 .pledge-modal {
@@ -483,6 +484,12 @@ body.thankyou-open .thankyou-modal h2 {
   margin-top: 45px;
 }
 
+@media screen and (min-width: 400px) {
+  .container {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
 @media screen and (min-width: 638px) {
   .container {
     margin-left: 10%;
@@ -490,7 +497,7 @@ body.thankyou-open .thankyou-modal h2 {
   }
 
   body .card {
-    padding: 45px;
+    padding: 0 45px 45px 45px;
   }
   body .first-fold .fixed-hamburger {
     display: flex;
@@ -562,6 +569,9 @@ body.thankyou-open .thankyou-modal h2 {
   body .info .buttons-container .bookmark-button.bookmarked span::after {
     content: "ed";
   }
+  body .rewards.card .reward.card {
+    padding: 45px;
+  }
   body .rewards.card .reward.card .remaining-container {
     display: inline-block;
     margin-top: 5px;
@@ -569,6 +579,9 @@ body.thankyou-open .thankyou-modal h2 {
   body .rewards.card .reward.card button.btn {
     float: right;
     margin-top: unset;
+  }
+  body.back-project-open .pledge-modal {
+    padding: 45px;
   }
   body.back-project-open .pledge-modal .pledge-option {
     position: relative;
@@ -626,6 +639,9 @@ body.thankyou-open .thankyou-modal h2 {
     display: block;
     padding: 0;
   }
+  body.thankyou-open .thankyou-modal {
+    padding: 45px;
+  }
 }
 @media screen and (min-width: 650px) {
   body .numbers.card .numbers-container {
@@ -656,11 +672,6 @@ body.thankyou-open .thankyou-modal h2 {
 @media screen and (min-width: 850px) {
   .first-fold {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/image-hero-desktop.jpg") no-repeat center center/cover;
-  }
-
-  .container {
-    margin-left: 15%;
-    margin-right: 15%;
   }
 }
 @media screen and (min-width: 950px) {

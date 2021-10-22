@@ -10,8 +10,9 @@ body {
             position: fixed;
             top: 5vh;
             z-index: 3;
-            height: 80vh;
+            max-height: 80vh;
             overflow-y: scroll;
+            height: min-content;
         }
     }
 }

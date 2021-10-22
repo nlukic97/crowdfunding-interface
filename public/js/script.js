@@ -1,16 +1,16 @@
 import * as ProgressBar from './progress.js';
 
-// ------------- init -------------
+// ------------- init + event listeners -------------
 ProgressBar.update()
 var backed = false; //telling us that this user has not backed yet. if they to back the project, this will be set to true so that the number of backers cannot be increased with more donations.
 
-//adding listener for click on 'back this project' button to display the modal and overlay
+//open 'pledge modal'
 document.getElementById('back-project-btn').addEventListener('click',function(){   
     showModal('back-project-open')
 })
 
 
-//button to close the modal
+//close the 'pledge modal'
 document.getElementById('exit-modal-btn').addEventListener('click',function(){
     hideModal('back-project-open')
 })
@@ -18,7 +18,7 @@ document.getElementById('exit-modal-btn').addEventListener('click',function(){
 
 
 
-//adding event listeners for all the submit buttons in the pledge modal
+//Submit event listeners for all "pledge-submit" buttons
 document.querySelectorAll('.pledge-submit-btn').forEach(function(btn){
     btn.addEventListener('click',function(){
         let inputToSubmit = btn.parentElement.querySelector('.input-container input')
@@ -106,22 +106,13 @@ function deselectOtherOption(){
 
 // update the numbers upon making a donation
 function updateNumbers(amountToAdd, reward){
-    
-    
-    let curr = document.getElementById('gathered').innerText.replaceAll(',','')
-    document.getElementById('gathered').innerText = parseInt(curr) + parseInt(amountToAdd) //add the amount gathered with the donation made
+    updateGatheredAmount(amountToAdd)
     
     ProgressBar.update()
-
     updateAvailableRewards(reward)
-    
-    // The user can only donate once
-    if(backed === false){
-        let currBakcers = document.getElementById('backers').innerText
-        document.getElementById('backers').innerText = parseInt(currBakcers) + 1
-        backed = true
-    } 
+    updateBackersNumber()
 }
+
 
 function updateAvailableRewards(reward){
     let elementsClass = reward.toLowerCase().replaceAll(' ','-')
@@ -133,5 +124,18 @@ function updateAvailableRewards(reward){
             label.innerText = parseInt(label.innerText) - 1;
         })
     }
+}
 
+function updateBackersNumber(){
+    if(backed === false){
+        let currBakcers = document.getElementById('backers').innerText.replaceAll(',','')
+        document.getElementById('backers').innerText = (parseInt(currBakcers) + 1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        backed = true
+    } 
+}
+
+function updateGatheredAmount(value){
+    let curr = document.getElementById('gathered').innerText.replaceAll(',','')
+    let newAmount = parseInt(curr) + parseInt(value)
+    document.getElementById('gathered').innerText = newAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
