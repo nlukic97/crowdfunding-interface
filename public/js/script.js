@@ -1,5 +1,7 @@
-// ------------- init -------------
+import * as ProgressBar from './progress.js';
 
+// ------------- init -------------
+ProgressBar.update()
 
 //adding listener for click on 'back this project' button to display the modal and overlay
 document.getElementById('back-project-btn').addEventListener('click',function(){   
@@ -19,7 +21,7 @@ document.getElementById('exit-modal-btn').addEventListener('click',function(){
 document.querySelectorAll('.pledge-submit-btn').forEach(function(btn){
     btn.addEventListener('click',function(){
         let inputToSubmit = btn.parentElement.querySelector('.input-container input')
-        console.log(inputToSubmit);
+        
         let data = {
             reward: inputToSubmit.getAttribute('data-reward'),
             amount: inputToSubmit.value
@@ -75,12 +77,11 @@ document.querySelectorAll('.pledge-modal .pledge-option').forEach(function(optio
 
 
 function selectNewPaymentContainer(element){
-    
     deselectOtherOption()
     
     //adding the selected to the pledge option that the user clicked
     element.classList.add('selected')
-    paymentContainer = element.querySelector('.payment-container')
+    let paymentContainer = element.querySelector('.payment-container')
     paymentContainer.style.maxHeight = paymentContainer.scrollHeight + 'px'
 }
 
@@ -96,23 +97,24 @@ function hideModal(className){
 
 function deselectOtherOption(){
     let prevSelected = document.querySelector('.pledge-option.selected')
-    console.log('deselecting option', prevSelected);
+    
     //update css from previously selected item if there is one
     if(prevSelected){
         prevSelected.classList.remove('selected');
         
-        prevPaymentContainer = prevSelected.querySelector('.payment-container')
+        let prevPaymentContainer = prevSelected.querySelector('.payment-container')
         if(prevPaymentContainer) prevPaymentContainer.style=''
     }
 }
 
 function appendAmount(amountToAdd, reward){
     
-    console.log(`The reward is ${reward}`);
     let curr = document.getElementById('gathered').innerText.replaceAll(',','')
     let currBakcers = document.getElementById('backers').innerText
-    console.log(curr);
 
     document.getElementById('gathered').innerText = parseInt(curr) + parseInt(amountToAdd) //increase amount gathered
+    ProgressBar.update()
+
+    
     document.getElementById('backers').innerText = parseInt(currBakcers) + 1 //increase backers number
 }
