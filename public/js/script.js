@@ -27,13 +27,18 @@ document.querySelectorAll('.pledge-submit-btn').forEach(function(btn){
             reward: inputToSubmit.getAttribute('data-reward'),
             amount: inputToSubmit.value
         }
-        
-        console.log('Data to submit', data);
 
-        updateNumbers(data.amount, data.reward)
+        if(data.amount >= 1){
+            console.log('Data to submit', data);
+    
+            updateNumbers(data.amount, data.reward)
+            
+            hideModal('back-project-open')
+            showModal('thankyou-open')
+        } else {
+            console.warn('No.');
+        }
         
-        hideModal('back-project-open')
-        showModal('thankyou-open')
     })
 })
 
@@ -47,11 +52,7 @@ document.getElementById('close-thankyou-modal').addEventListener('click',functio
 
 
 
-
-// ------------ Methods ------------
-
 // selecting all options in the pledge modal to add (or not add) a click event listener
-
 document.querySelectorAll('.pledge-modal .pledge-option').forEach(function(optionCard){
     
     //Only add the click event listener for options that are in stock (do not contain the 'out-of-stock' class)
@@ -69,14 +70,7 @@ document.querySelectorAll('.pledge-modal .pledge-option').forEach(function(optio
 
 
 
-
-
-
-
-
-
-
-
+// ------------ Methods ------------
 function selectNewPaymentContainer(element){
     deselectOtherOption()
     
@@ -90,6 +84,7 @@ function selectNewPaymentContainer(element){
 function showModal(className){
     document.body.classList.add(className)
 }
+
 
 function hideModal(className){
     document.body.classList.remove(className)
@@ -112,16 +107,31 @@ function deselectOtherOption(){
 // update the numbers upon making a donation
 function updateNumbers(amountToAdd, reward){
     
+    
     let curr = document.getElementById('gathered').innerText.replaceAll(',','')
-    let currBakcers = document.getElementById('backers').innerText
-
     document.getElementById('gathered').innerText = parseInt(curr) + parseInt(amountToAdd) //add the amount gathered with the donation made
+    
     ProgressBar.update()
 
-
+    updateAvailableRewards(reward)
+    
     // The user can only donate once
     if(backed === false){
+        let currBakcers = document.getElementById('backers').innerText
         document.getElementById('backers').innerText = parseInt(currBakcers) + 1
         backed = true
     } 
+}
+
+function updateAvailableRewards(reward){
+    let elementsClass = reward.toLowerCase().replaceAll(' ','-')
+    console.log(elementsClass);
+    let amountContainers = document.querySelectorAll(`.amount.${elementsClass}`)
+
+    if(amountContainers != null){
+        amountContainers.forEach(label=>{
+            label.innerText = parseInt(label.innerText) - 1;
+        })
+    }
+
 }
