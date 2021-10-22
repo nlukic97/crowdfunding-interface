@@ -4,10 +4,14 @@ export function update(){
     let goal = parseInt(document.querySelector('#goal').innerText.replaceAll(',',''))
     
     
-    let percentage = Math.floor(gathered/ goal * 100)
+    let percentage;
 
-    // Only increase it up to 100%
-    if(percentage <= 100){
-        document.querySelector('.progress-bar').style='width:' + percentage + '%';
-    } 
+    if(gathered >= goal){
+        percentage = 100
+    } else {
+        percentage = Math.floor(gathered/ goal * 100)
+    }
+    
+    document.querySelector('.progress-bar').style='width:' + percentage + '%';
+
 }

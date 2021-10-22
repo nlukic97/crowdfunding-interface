@@ -2,6 +2,7 @@ import * as ProgressBar from './progress.js';
 
 // ------------- init -------------
 ProgressBar.update()
+var backed = false; //telling us that this user has not backed yet. if they to back the project, this will be set to true so that the number of backers cannot be increased with more donations.
 
 //adding listener for click on 'back this project' button to display the modal and overlay
 document.getElementById('back-project-btn').addEventListener('click',function(){   
@@ -29,7 +30,7 @@ document.querySelectorAll('.pledge-submit-btn').forEach(function(btn){
         
         console.log('Data to submit', data);
 
-        appendAmount(data.amount, data.reward)
+        updateNumbers(data.amount, data.reward)
         
         hideModal('back-project-open')
         showModal('thankyou-open')
@@ -107,14 +108,20 @@ function deselectOtherOption(){
     }
 }
 
-function appendAmount(amountToAdd, reward){
+
+// update the numbers upon making a donation
+function updateNumbers(amountToAdd, reward){
     
     let curr = document.getElementById('gathered').innerText.replaceAll(',','')
     let currBakcers = document.getElementById('backers').innerText
 
-    document.getElementById('gathered').innerText = parseInt(curr) + parseInt(amountToAdd) //increase amount gathered
+    document.getElementById('gathered').innerText = parseInt(curr) + parseInt(amountToAdd) //add the amount gathered with the donation made
     ProgressBar.update()
 
-    
-    document.getElementById('backers').innerText = parseInt(currBakcers) + 1 //increase backers number
+
+    // The user can only donate once
+    if(backed === false){
+        document.getElementById('backers').innerText = parseInt(currBakcers) + 1
+        backed = true
+    } 
 }
