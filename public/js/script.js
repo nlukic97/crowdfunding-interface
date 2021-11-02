@@ -85,26 +85,11 @@ document.querySelectorAll('.btn.scrollToElement').forEach(btn=>{
         showModal('back-project-open')
 
         let attr = btn.getAttribute('data-modalReward');
-        let pledgeOption = document.querySelector(`#scroll-${attr}`);
-        let pledgeModal = document.querySelector('.pledge-modal')
+        let pledgeOption = document.querySelector(`#scroll-${attr}`);            
         
-        // pledgeModal.scrollTop = pledgeOption.offsetTop
-    
-        // slowly scroll towards the selected pledge option after 0.5 seconds
-        setTimeout(() => {
-            var scroller = setInterval(function(){
-                pledgeModal.scrollTop = document.querySelector('.pledge-modal').scrollTop + 4
-    
-                if(
-                    pledgeModal.scrollTop + 30 >= pledgeOption.offsetTop ||
-                    (pledgeModal.scrollTop + pledgeModal.offsetHeight) >= pledgeModal.scrollHeight
-                    ){
-                    selectNewPaymentContainer(pledgeOption)
-                    clearInterval(scroller)
-                }
-            },5)
-        }, 500);
-        
+        document.querySelector('.pledge-modal').scrollTop = 0; //returns it to the top
+        pledgeOption.scrollIntoView({behavior:'smooth'});
+        selectNewPaymentContainer(pledgeOption)
         
     })
 })
